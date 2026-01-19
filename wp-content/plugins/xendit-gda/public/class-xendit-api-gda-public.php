@@ -101,4 +101,15 @@ class Xendit_Api_GDA_Public {
 		wp_enqueue_script( $this->plugin_name . '-cards-session', 'https://js.xendit.co/cards-session.min.js', array(), $this->version );
 	}
 
+	public function embed_head_scripts() {
+		echo '<script id="xendit_public">';
+		echo json_encode(
+			array(
+				'xendit_public' => 'xnd_public_development_L9PqSaNPfi_pgffBjGM2k7nnDoyDBAIXVqZze1fnKoD1DUuJsnB8Tpw6bS06pmJ',
+				'xendit_endpoint' => XENDIT_API_ENDPOINT
+			)
+		);
+		echo "</script>";
+	}
+
 }
