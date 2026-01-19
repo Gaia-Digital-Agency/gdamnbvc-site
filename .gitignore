@@ -1,0 +1,12 @@
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+img/
+error_log
+*/error_log
+*.log
+.htaccess
+wp-config.php
+node_modules/
+*.zip
+*.tar.gz
