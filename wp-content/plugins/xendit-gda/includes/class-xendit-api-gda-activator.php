@@ -43,8 +43,10 @@ class Xendit_Api_GDA_Activator {
 
 	public static function activate() {
 		require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-		$this->create_cart_table();
-		$this->create_cart_meta_table();
+		$self = new self();
+		$self->create_cart_table();
+		$self->create_cart_meta_table();
+
 		add_option('xendit_api_gda_db_version', '1.0');
 	}
 
@@ -60,7 +62,7 @@ class Xendit_Api_GDA_Activator {
 			reference_id VARCHAR(255),
 			idempotency_id VARCHAR(255),
 			card_id VARCHAR(255),
-			current_status ENUM ( 'inactive' , 'done' , 'pending' ),
+			current_status ENUM ( 'inactive' , 'done' , 'pending' ) NOT NULL DEFAULT 'inactive',
 			created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 			PRIMARY KEY (id)
 		) $charset_collate;";
