@@ -62,7 +62,7 @@ class Xendit_Api_GDA_Rest_Api {
             $wpdb->prepare(
                 "SELECT * FROM %1s WHERE cart_id = '%2s'",
                 $table_cart
-            )
+            );
 
             return new WP_REST_Response(
                 array(

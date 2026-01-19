@@ -49,7 +49,7 @@ class Xendit_Api_GDA_Activator {
 	}
 
 
-	private function create_cart_table () {
+	public function create_cart_table () {
 
 		$table_name = $this->get_table_prefix() . 'cart';
 		$charset_collate = $this->get_charset_collate();
@@ -67,7 +67,7 @@ class Xendit_Api_GDA_Activator {
 		dbDelta($sql);
 	}
 
-	private function create_cart_meta_table() {
+	public function create_cart_meta_table() {
 		$table_name = $this->get_table_prefix() . 'cart_meta';
 		$charset_collate = $this->get_charset_collate();
 
