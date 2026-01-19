@@ -115,7 +115,7 @@
                 <div class="swiper mx-0">
                     <div class="swiper-wrapper swiper-container">
     
-                        <!-- <div class="swiper-slide">
+                        <div class="swiper-slide">
                             <div class="form-wrapper">
                                 <div class="title-wrapper text-center mb-[50px]">
                                     <p class="text-h2 font-medium">Select Donation <span class="font-light">Amount</span></p>
@@ -174,7 +174,7 @@
                                 <input type="hidden" id="input-period" class="mandatory" name="period" value="once">
     
                             </div>
-                        </div> -->
+                        </div>
 
 
                         <div class="swiper-slide">

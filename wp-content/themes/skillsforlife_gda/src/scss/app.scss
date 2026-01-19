@@ -53,6 +53,10 @@ header {
                 background: #000;
                 transition: .4s all ease;
             }
+
+            &.get-involved-button::before {
+                display: none;
+            }
         }
         &:hover a::before, &.active a::before {
             right: 0;

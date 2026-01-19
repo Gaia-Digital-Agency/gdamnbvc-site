@@ -28,8 +28,8 @@ if ( ! empty( $block['align'] ) ) {
 $buttons = get_field('buttons');
 
 $buttonsStyle = [
-    "bg-theme-black text-white hover:bg-transparent hover:text-theme-black",
-    "bg-transparent text-theme-black hover:bg-theme-black hover:text-white",
+    "bg-theme-black text-white hover:bg-theme-grey-3 hover:border-theme-grey-3 hover:text-white hover:text-theme-black",
+    "bg-transparent text-theme-black hover:bg-theme-grey-5 hover:border-theme-grey-5",
 ]
 
 ?>
@@ -39,7 +39,7 @@ $buttonsStyle = [
     <div class="buttons-wrapper flex flex-wrap gap-7">
         <?php foreach($buttons as $i => $button) : ?>
             <div class="button-item" style="flex: 0 0 calc(<?= 100 / count($buttons) ?>% - <?= 1.75 / 2 ?>rem);">
-                <a href="<?= $button['url'] ?>" class="md:py-7 py-4 border-[3px] block text-center w-full border-theme-black text-button transition <?= $buttonsStyle[$i] ?>"><?= $button['text'] ?></a>
+                <a href="<?= $button['url'] ?>" class="md:py-[38px] py-4 border-[3px] block font-medium text-center w-full border-theme-black text-button transition <?= $buttonsStyle[$i] ?>"><?= $button['text'] ?></a>
             </div>
         <?php endforeach ?>
     </div>

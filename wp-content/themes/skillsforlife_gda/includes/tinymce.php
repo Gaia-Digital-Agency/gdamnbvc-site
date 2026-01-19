@@ -89,6 +89,13 @@ add_action('acf/input/admin_footer', function(){
                             { title: 'Light', inline: 'span', classes: 'font-light' },
                         ]
                     },
+                    {
+                        title: 'Font Family',
+                        items: [
+                            {title: "Regular", inline: 'span', classes: 'font-sans'},
+                            {title: "Extend", inline: 'span', classes: 'font-extend'}
+                        ]
+                    }
                 ];
                 return mceInit;
             });

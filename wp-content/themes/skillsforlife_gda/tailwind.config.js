@@ -134,6 +134,12 @@ const containerStyles = ({ addComponents }) => {
           'theme-grey': '#F3F3F4',
           'theme-gray-2': '#e9e9e9',
           'theme-grey-2': '#e9e9e9',
+          'theme-gray-3': '#7B7B7E',
+          'theme-grey-3': '#7B7B7E',
+          'theme-gray-4': '#C7C7CA',
+          'theme-grey-4': '#C7C7CA',
+          'theme-gray-5': '#E1E1E3',
+          'theme-grey-5': '#E1E1E3',
           'theme-beige': '#CEC5BF'
         }
       },

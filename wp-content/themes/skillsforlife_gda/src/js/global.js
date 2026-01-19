@@ -121,10 +121,40 @@ const initMobileMenu = () => {
     })
 }
 
+const triggerDonationForm = () => {
+
+}
+
 
 const initDonationForm = () => {
 
     const formComponent = document.querySelector('#donation-form')
+    const overlay = formComponent.querySelector('.overlay')
+    const outerWrapper = formComponent.querySelector('.outer-wrapper')
+
+    const triggerForm = document.querySelectorAll('.trigger-donation-form')
+    gsap.set(formComponent, {
+        visibility: 'hidden'
+    })
+    gsap.set(outerWrapper, {
+        xPercent: -100
+    })
+    gsap.set(overlay, {
+        autoAlpha: 0
+    })
+    triggerForm.forEach(component => {
+        component.addEventListener('click', () => {
+            gsap.to(formComponent, {
+                visibility: 'visible'
+            })
+            gsap.to(outerWrapper, {
+                xPercent: 0
+            })
+            gsap.to(overlay, {
+                autoAlpha: 1
+            })
+        })
+    })
     const swiperEl = formComponent.querySelector('.swiper')
     const choices = [
         {
