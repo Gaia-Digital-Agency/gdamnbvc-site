@@ -213,7 +213,6 @@ class Xendit_Api_GDA_Payment {
                 'external_id' => $cart_id,
                 'amount' => 50000
             ));
-            // var_dump($create_invoice);
             return $create_invoice;
         } catch(Exception $e) {
             echo $e;

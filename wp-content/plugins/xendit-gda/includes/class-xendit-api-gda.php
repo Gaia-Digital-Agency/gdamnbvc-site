@@ -88,7 +88,6 @@ class Xendit_Api_GDA {
 
 	public function debugger($debug = '') {
 		// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-xendit-api-gda-payment.php';
-		// var_dump($plugin_admin);
 		add_action('page_theme_debugger', function () {
 
 			ob_start();
@@ -114,7 +113,6 @@ class Xendit_Api_GDA {
 			$ajax = new Xendit_Api_GDA_Ajax();
 			$test = $ajax->create_payment_request();
 			echo "<pre>";
-			var_dump($test);
 			echo "</pre>";
 			
 			

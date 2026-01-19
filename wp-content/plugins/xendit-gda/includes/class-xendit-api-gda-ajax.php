@@ -93,7 +93,6 @@ class Xendit_Api_GDA_Ajax {
         $code = $response->getStatusCode();
         $data = json_decode($response->getBody(), true);
         
-        var_dump($code, $data);
 
         // $header = [];
         // $header[] = 'Authorization: Basic ' . $api_base_64;
@@ -105,7 +104,6 @@ class Xendit_Api_GDA_Ajax {
         // curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
         // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         // $result = curl_exec($ch);
-        // var_dump($result);
 
     }
 
@@ -171,8 +169,6 @@ class Xendit_Api_GDA_Ajax {
 
         $code = $response->getStatusCode();
         $data = json_decode($response->getBody(), true);
-        
-        var_dump($code, $data);
 
     }
 
@@ -222,8 +218,6 @@ class Xendit_Api_GDA_Ajax {
 
         $code = $response->getStatusCode();
         $data = json_decode($response->getBody(), true);
-        
-        var_dump($code, $data);
     }
 
 }

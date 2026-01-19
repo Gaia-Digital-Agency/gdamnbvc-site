@@ -37,7 +37,6 @@ class Xendit_Api_GDA_Rest_Api {
     }
 
     public function payment_handler() {
-        // var_dump('test');
         // $payment = new Xendit_Api_GDA_Payment();
         // $payment->pay();
     }
@@ -67,8 +66,6 @@ class Xendit_Api_GDA_Rest_Api {
             'exp_year' => $data['card_data']['exp_year'],
             'status' => $data['status']
         ));
-
-        var_dump($set_meta);
 
         return new WP_REST_Response(
             array(
