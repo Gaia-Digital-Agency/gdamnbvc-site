@@ -1,98 +1,417 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta name="viewport" content="width=device-width" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="robots" content="noindex,nofollow" />
-	<title>WordPress &#8250; ReadMe</title>
-	<link rel="stylesheet" href="wp-admin/css/install.css?ver=20100228" type="text/css" />
-</head>
-<body>
-<h1 id="logo">
-	<a href="https://wordpress.org/"><img alt="WordPress" src="wp-admin/images/wordpress-logo.png" /></a>
-</h1>
-<p style="text-align: center">Semantic Personal Publishing Platform</p>
+# Rob Peetom School Of Life Site
 
-<h2>First Things First</h2>
-<p>Welcome. WordPress is a very special project to me. Every developer and contributor adds something unique to the mix, and together we create something beautiful that I am proud to be a part of. Thousands of hours have gone into WordPress, and we are dedicated to making it better every day. Thank you for making it part of your world.</p>
-<p style="text-align: right">&#8212; Matt Mullenweg</p>
+## Table of Contents
 
-<h2>Installation: Famous 5-minute install</h2>
-<ol>
-	<li>Unzip the package in an empty directory and upload everything.</li>
-	<li>Open <span class="file"><a href="wp-admin/install.php">wp-admin/install.php</a></span> in your browser. It will take you through the process to set up a <code>wp-config.php</code> file with your database connection details.
-		<ol>
-			<li>If for some reason this does not work, do not worry. It may not work on all web hosts. Open up <code>wp-config-sample.php</code> with a text editor like WordPad or similar and fill in your database connection details.</li>
-			<li>Save the file as <code>wp-config.php</code> and upload it.</li>
-			<li>Open <span class="file"><a href="wp-admin/install.php">wp-admin/install.php</a></span> in your browser.</li>
-		</ol>
-	</li>
-	<li>Once the configuration file is set up, the installer will set up the tables needed for your site. If there is an error, double check your <code>wp-config.php</code> file, and try again. If it fails again, please go to the <a href="https://wordpress.org/support/forums/">WordPress support forums</a> with as much data as you can gather.</li>
-	<li><strong>If you did not enter a password, note the password given to you.</strong> If you did not provide a username, it will be <code>admin</code>.</li>
-	<li>The installer should then send you to the <a href="wp-login.php">login page</a>. Sign in with the username and password you chose during the installation. If a password was generated for you, you can then click on &#8220;Profile&#8221; to change the password.</li>
-</ol>
+- [Project Overview](#project-overview)
+- [Repository Structure](#repository-structure)
+- [WordPress File Structure](#wordpress-file-structure)
+- [Getting Started](#getting-started)
+- [Development Workflow](#development-workflow)
+- [Deployment](#deployment)
+- [Configuration](#configuration)
+- [Backup & Recovery](#backup--recovery)
+- [Contributing](#contributing)
 
-<h2>Updating</h2>
-<h3>Using the Automatic Updater</h3>
-<ol>
-	<li>Open <span class="file"><a href="wp-admin/update-core.php">wp-admin/update-core.php</a></span> in your browser and follow the instructions.</li>
-	<li>You wanted more, perhaps? That&#8217;s it!</li>
-</ol>
+## Project Overview
 
-<h3>Updating Manually</h3>
-<ol>
-	<li>Before you update anything, make sure you have backup copies of any files you may have modified such as <code>index.php</code>.</li>
-	<li>Delete your old WordPress files, saving ones you&#8217;ve modified.</li>
-	<li>Upload the new files.</li>
-	<li>Point your browser to <span class="file"><a href="wp-admin/upgrade.php">/wp-admin/upgrade.php</a>.</span></li>
-</ol>
+**Client:** GDAMNBVC  
+**Agency:** [Gaia Digital Agency](https://github.com/Gaia-Digital-Agency)  
+**Platform:** WordPress  
+**Status:** Ongoing Development  
 
-<h2>Migrating from other systems</h2>
-<p>WordPress can <a href="https://developer.wordpress.org/advanced-administration/wordpress/import/">import from a number of systems</a>. First you need to get WordPress installed and working as described above, before using <a href="wp-admin/import.php">our import tools</a>.</p>
+This repository contains the WordPress installation for the GDAMNBVC website, including custom themes, plugins, and configurations managed by the Gaia Digital Agency development team.
 
-<h2>System Requirements</h2>
-<ul>
-	<li><a href="https://www.php.net/">PHP</a> version <strong>7.2.24</strong> or greater.</li>
-	<li><a href="https://www.mysql.com/">MySQL</a> version <strong>5.5.5</strong> or greater.</li>
-</ul>
+### Tech Stack
 
-<h3>Recommendations</h3>
-<ul>
-	<li><a href="https://www.php.net/">PHP</a> version <strong>8.3</strong> or greater.</li>
-	<li><a href="https://www.mysql.com/">MySQL</a> version <strong>8.0</strong> or greater OR <a href="https://mariadb.org/">MariaDB</a> version <strong>10.6</strong> or greater.</li>
-	<li>The <a href="https://httpd.apache.org/docs/2.2/mod/mod_rewrite.html">mod_rewrite</a> Apache module.</li>
-	<li><a href="https://wordpress.org/news/2016/12/moving-toward-ssl/">HTTPS</a> support.</li>
-	<li>A link to <a href="https://wordpress.org/">wordpress.org</a> on your site.</li>
-</ul>
+| Component | Technology |
+|-----------|------------|
+| CMS | WordPress 6.x |
+| Backend | PHP 8.x |
+| Database | MySQL 8.0 / MariaDB 10.6+ |
+| Frontend | HTML5, CSS3, JavaScript |
+| Server | Apache / Nginx |
 
-<h2>Online Resources</h2>
-<p>If you have any questions that are not addressed in this document, please take advantage of WordPress&#8217; numerous online resources:</p>
-<dl>
-	<dt><a href="https://wordpress.org/documentation/">HelpHub</a></dt>
-		<dd>HelpHub is the encyclopedia of all things WordPress. It is the most comprehensive source of information for WordPress available.</dd>
-	<dt><a href="https://wordpress.org/news/">The WordPress Blog</a></dt>
-		<dd>This is where you&#8217;ll find the latest updates and news related to WordPress. Recent WordPress news appears in your administrative dashboard by default.</dd>
-	<dt><a href="https://planet.wordpress.org/">WordPress Planet</a></dt>
-		<dd>The WordPress Planet is a news aggregator that brings together posts from WordPress blogs around the web.</dd>
-	<dt><a href="https://wordpress.org/support/forums/">WordPress Support Forums</a></dt>
-		<dd>If you&#8217;ve looked everywhere and still cannot find an answer, the support forums are very active and have a large community ready to help. To help them help you be sure to use a descriptive thread title and describe your question in as much detail as possible.</dd>
-	<dt><a href="https://make.wordpress.org/support/handbook/appendix/other-support-locations/introduction-to-irc/">WordPress <abbr>IRC</abbr> (Internet Relay Chat) Channel</a></dt>
-		<dd>There is an online chat channel that is used for discussion among people who use WordPress and occasionally support topics. The above wiki page should point you in the right direction. (<a href="https://web.libera.chat/#wordpress">irc.libera.chat #wordpress</a>)</dd>
-</dl>
+## Repository Structure
 
-<h2>Final Notes</h2>
-<ul>
-	<li>If you have any suggestions, ideas, or comments, or if you (gasp!) found a bug, join us in the <a href="https://wordpress.org/support/forums/">Support Forums</a>.</li>
-	<li>WordPress has a robust plugin <abbr>API</abbr> (Application Programming Interface) that makes extending the code easy. If you are a developer interested in utilizing this, see the <a href="https://developer.wordpress.org/plugins/">Plugin Developer Handbook</a>. You shouldn&#8217;t modify any of the core code.</li>
-</ul>
+```
+gdamnbvc-site/
+├── repo/
+│   └── test/
+│       └── wordpress/          # Test/staging WordPress instance
+├── wp-content/                 # WordPress content directory (tracked)
+│   ├── themes/                 # Custom and child themes
+│   ├── plugins/                # Installed plugins
+│   ├── uploads/                # Media uploads (typically gitignored)
+│   ├── languages/              # Translation files
+│   └── mu-plugins/             # Must-use plugins
+├── .backup_log                 # Backup operation logs
+├── .gitignore                  # Git ignore rules
+├── license.txt                 # WordPress GPL license
+├── readme.html                 # WordPress default readme
+├── wp-config-sample.php        # Sample configuration file
+└── README.md                   # This file
+```
 
-<h2>Share the Love</h2>
-<p>WordPress has no multi-million dollar marketing campaign or celebrity sponsors, but we do have something even better&#8212;you. If you enjoy WordPress please consider telling a friend, setting it up for someone less knowledgeable than yourself, or writing the author of a media article that overlooks us.</p>
+## WordPress File Structure
 
-<p>WordPress is the official continuation of b2/caf&#233;log, which came from Michel V. The work has been continued by the <a href="https://wordpress.org/about/">WordPress developers</a>. If you would like to support WordPress, please consider <a href="https://wordpress.org/donate/">donating</a>.</p>
+Below is the complete WordPress file structure for reference. Files/folders marked with `[tracked]` are version controlled; those marked `[ignored]` are excluded via `.gitignore`.
 
-<h2>License</h2>
-<p>WordPress is free software, and is released under the terms of the <abbr>GPL</abbr> (GNU General Public License) version 2 or (at your option) any later version. See <a href="license.txt">license.txt</a>.</p>
+```
+wordpress/
+│
+├── wp-admin/                       [ignored] # WordPress admin dashboard
+│   ├── css/                        # Admin stylesheets
+│   ├── images/                     # Admin images
+│   ├── includes/                   # Admin PHP includes
+│   ├── js/                         # Admin JavaScript
+│   ├── maint/                      # Maintenance mode files
+│   ├── network/                    # Multisite network admin
+│   └── user/                       # User profile pages
+│
+├── wp-includes/                    [ignored] # WordPress core includes
+│   ├── blocks/                     # Gutenberg block definitions
+│   ├── certificates/               # SSL certificates
+│   ├── css/                        # Core stylesheets
+│   ├── fonts/                      # Core fonts
+│   ├── images/                     # Core images
+│   ├── js/                         # Core JavaScript
+│   ├── rest-api/                   # REST API classes
+│   ├── theme-compat/               # Theme compatibility
+│   ├── widgets/                    # Widget classes
+│   └── *.php                       # Core PHP files
+│
+├── wp-content/                     [tracked]  # CUSTOMIZATIONS GO HERE
+│   │
+│   ├── themes/                     [tracked]  # Theme files
+│   │   ├── theme-name/             # Active theme
+│   │   │   ├── assets/             # Theme assets (css, js, images)
+│   │   │   │   ├── css/
+│   │   │   │   ├── js/
+│   │   │   │   └── images/
+│   │   │   ├── inc/                # PHP includes
+│   │   │   ├── template-parts/     # Reusable template parts
+│   │   │   ├── templates/          # Page templates
+│   │   │   ├── functions.php       # Theme functions
+│   │   │   ├── style.css           # Main stylesheet (required)
+│   │   │   ├── index.php           # Main template (required)
+│   │   │   ├── header.php          # Header template
+│   │   │   ├── footer.php          # Footer template
+│   │   │   ├── sidebar.php         # Sidebar template
+│   │   │   ├── single.php          # Single post template
+│   │   │   ├── page.php            # Page template
+│   │   │   ├── archive.php         # Archive template
+│   │   │   ├── search.php          # Search results template
+│   │   │   ├── 404.php             # 404 error template
+│   │   │   ├── comments.php        # Comments template
+│   │   │   └── screenshot.png      # Theme screenshot
+│   │   │
+│   │   └── theme-name-child/       # Child theme (if applicable)
+│   │       ├── style.css
+│   │       └── functions.php
+│   │
+│   ├── plugins/                    [tracked]  # Plugin files
+│   │   ├── plugin-name/
+│   │   │   ├── assets/
+│   │   │   ├── includes/
+│   │   │   ├── languages/
+│   │   │   ├── templates/
+│   │   │   └── plugin-name.php     # Main plugin file
+│   │   └── ...
+│   │
+│   ├── mu-plugins/                 [tracked]  # Must-use plugins
+│   │   └── *.php                   # Auto-loaded plugins
+│   │
+│   ├── uploads/                    [ignored]  # Media library
+│   │   ├── 2024/                   # Year-based folders
+│   │   │   ├── 01/                 # Month-based folders
+│   │   │   └── ...
+│   │   └── ...
+│   │
+│   ├── languages/                  [tracked]  # Translation files
+│   │   ├── plugins/                # Plugin translations
+│   │   ├── themes/                 # Theme translations
+│   │   └── *.mo, *.po              # Core translations
+│   │
+│   ├── upgrade/                    [ignored]  # Upgrade working directory
+│   ├── cache/                      [ignored]  # Cache files
+│   ├── debug.log                   [ignored]  # Debug log file
+│   └── index.php                   # Security index file
+│
+├── .htaccess                       [ignored]  # Apache configuration
+├── index.php                       [ignored]  # WordPress entry point
+├── license.txt                     [tracked]  # GPL license
+├── readme.html                     [tracked]  # WordPress readme
+├── wp-activate.php                 [ignored]  # Account activation
+├── wp-blog-header.php              [ignored]  # Blog header loader
+├── wp-comments-post.php            [ignored]  # Comment handler
+├── wp-config.php                   [ignored]  # Configuration (SENSITIVE)
+├── wp-config-sample.php            [tracked]  # Sample configuration
+├── wp-cron.php                     [ignored]  # Scheduled tasks
+├── wp-links-opml.php               [ignored]  # OPML export
+├── wp-load.php                     [ignored]  # WordPress loader
+├── wp-login.php                    [ignored]  # Login page
+├── wp-mail.php                     [ignored]  # Email handler
+├── wp-settings.php                 [ignored]  # Core settings
+├── wp-signup.php                   [ignored]  # User signup
+├── wp-trackback.php                [ignored]  # Trackback handler
+└── xmlrpc.php                      [ignored]  # XML-RPC interface
+```
 
-</body>
-</html>
+## Getting Started
+
+### Prerequisites
+
+- PHP 8.0+ (recommended: 8.3)
+- MySQL 8.0+ or MariaDB 10.6+
+- Apache with `mod_rewrite` or Nginx
+- Composer (optional, for dependency management)
+- Git
+- Local development environment (LocalWP, XAMPP, MAMP, Docker, etc.)
+
+### Local Development Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Gaia-Digital-Agency/gdamnbvc-site.git
+   cd gdamnbvc-site
+   ```
+
+2. **Set up local WordPress:**
+   - Download WordPress core files (not tracked in repo)
+   - Place them in the project root
+
+3. **Configure the database:**
+   ```bash
+   cp wp-config-sample.php wp-config.php
+   ```
+   Edit `wp-config.php` with your local database credentials:
+   ```php
+   define('DB_NAME', 'gdamnbvc_local');
+   define('DB_USER', 'root');
+   define('DB_PASSWORD', 'your_password');
+   define('DB_HOST', 'localhost');
+   ```
+
+4. **Generate security keys:**
+   Visit [WordPress Salt Generator](https://api.wordpress.org/secret-key/1.1/salt/) and paste the generated keys into `wp-config.php`.
+
+5. **Import the database:**
+   ```bash
+   mysql -u root -p gdamnbvc_local < database_backup.sql
+   ```
+
+6. **Update site URLs (if needed):**
+   ```sql
+   UPDATE wp_options SET option_value = 'http://localhost/gdamnbvc' 
+   WHERE option_name IN ('siteurl', 'home');
+   ```
+
+7. **Access the site:**
+   - Frontend: `http://localhost/gdamnbvc`
+   - Admin: `http://localhost/gdamnbvc/wp-admin`
+
+## Development Workflow
+
+### Branch Strategy
+
+| Branch | Purpose |
+|--------|---------|
+| `main` | Production-ready code |
+| `staging` | Pre-production testing |
+| `develop` | Active development |
+| `feature/*` | New features |
+| `hotfix/*` | Emergency fixes |
+
+### Workflow Steps
+
+1. **Create a feature branch:**
+   ```bash
+   git checkout develop
+   git pull origin develop
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **Make changes and commit:**
+   ```bash
+   git add .
+   git commit -m "feat: add new feature description"
+   ```
+
+3. **Push and create PR:**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+4. **Create Pull Request** on GitHub for code review.
+
+### Commit Message Convention
+
+Follow [Conventional Commits](https://www.conventionalcommits.org/):
+
+```
+feat:     New feature
+fix:      Bug fix
+docs:     Documentation only
+style:    Formatting, missing semicolons, etc.
+refactor: Code refactoring
+test:     Adding tests
+chore:    Maintenance tasks
+```
+
+## Deployment
+
+### Production Deployment Checklist
+
+- [ ] Backup current production database and files
+- [ ] Test all changes on staging environment
+- [ ] Update `wp-config.php` for production settings
+- [ ] Disable debug mode (`WP_DEBUG` = false)
+- [ ] Clear all caches
+- [ ] Run database migrations if needed
+- [ ] Verify SSL certificate
+- [ ] Test critical functionality
+
+### Deployment Methods
+
+**Option 1: Git Pull (Recommended)**
+```bash
+ssh user@server
+cd /var/www/gdamnbvc
+git pull origin main
+```
+
+**Option 2: Manual Upload**
+- Upload changed files via SFTP/FTP
+- Ensure file permissions are correct (755 for directories, 644 for files)
+
+**Option 3: CI/CD Pipeline**
+- Configure GitHub Actions for automated deployment
+- See `.github/workflows/` for pipeline configuration
+
+## Configuration
+
+### Environment-Specific Settings
+
+Add to `wp-config.php`:
+
+```php
+// Environment detection
+define('WP_ENVIRONMENT_TYPE', 'production'); // local, development, staging, production
+
+// Debug settings (disable in production)
+define('WP_DEBUG', false);
+define('WP_DEBUG_LOG', false);
+define('WP_DEBUG_DISPLAY', false);
+
+// Performance
+define('WP_CACHE', true);
+define('COMPRESS_CSS', true);
+define('COMPRESS_SCRIPTS', true);
+
+// Security
+define('DISALLOW_FILE_EDIT', true);
+define('FORCE_SSL_ADMIN', true);
+
+// Memory limits
+define('WP_MEMORY_LIMIT', '256M');
+define('WP_MAX_MEMORY_LIMIT', '512M');
+```
+
+### Recommended .gitignore
+
+```gitignore
+# WordPress Core (downloaded separately)
+/wp-admin/
+/wp-includes/
+/index.php
+/wp-*.php
+!wp-config-sample.php
+/xmlrpc.php
+/.htaccess
+
+# Configuration (contains sensitive data)
+/wp-config.php
+
+# Uploads (too large for git)
+/wp-content/uploads/
+/wp-content/upgrade/
+/wp-content/cache/
+/wp-content/w3tc-config/
+
+# Logs
+*.log
+/wp-content/debug.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+
+# Dependencies
+/node_modules/
+/vendor/
+```
+
+## Backup & Recovery
+
+### Backup Strategy
+
+| Component | Frequency | Method |
+|-----------|-----------|--------|
+| Database | Daily | Automated mysqldump |
+| wp-content | Daily | File sync |
+| Full site | Weekly | Complete archive |
+
+### Manual Backup Commands
+
+**Database:**
+```bash
+mysqldump -u user -p database_name > backup_$(date +%Y%m%d).sql
+```
+
+**Files:**
+```bash
+tar -czvf wp-content_$(date +%Y%m%d).tar.gz wp-content/
+```
+
+### Recovery
+
+1. Restore database:
+   ```bash
+   mysql -u user -p database_name < backup_file.sql
+   ```
+
+2. Restore files:
+   ```bash
+   tar -xzvf wp-content_backup.tar.gz
+   ```
+
+## Contributing
+
+### Team Members
+
+| Role | Responsibility |
+|------|----------------|
+| Project Lead | Overall project management |
+| Frontend Dev | Theme development, CSS, JS |
+| Backend Dev | Plugin development, PHP |
+| QA | Testing and quality assurance |
+
+### Code Standards
+
+- Follow [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/)
+- Use meaningful variable and function names
+- Comment complex logic
+- Test thoroughly before committing
+
+### Pull Request Process
+
+1. Ensure code follows WordPress coding standards
+2. Update documentation if needed
+3. Test on local and staging environments
+4. Request review from at least one team member
+5. Merge only after approval
