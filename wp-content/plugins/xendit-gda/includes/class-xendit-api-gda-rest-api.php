@@ -56,23 +56,26 @@ class Xendit_Api_GDA_Rest_Api {
 
         $cart = new Xendit_Api_GDA_Cart();
         $cart->set_cart_id($external_id);
-        if(!$cart->check_cart_from_id()) return $this->error_handler('cant find external_id');
-        if($get_cart) {
-            $cart_id = $get_cart->id;
-            $wpdb->prepare(
-                "SELECT * FROM %1s WHERE cart_id = '%2s'",
-                $table_cart
-            );
+        if(!$cart->check_cart_from_db()) return $this->error_handler('cant find external_id');
 
-            return new WP_REST_Response(
-                array(
-                    'id' => $cart_id
-                ),
-                200
-            );
-        } else {
-            return $this->error_handler('cant find / match external_id');
-        }
+        $set_meta = $cart->set_cart_meta(array(
+            'business_id' => $parameters['business_id'],
+            'token_id' => $data['id'],
+            'amount' => $data['amount'],
+            'masked_card_number' => $data['card_data']['masked_card_number'],
+            'exp_month' => $data['card_data']['exp_month'],
+            'exp_year' => $data['card_data']['exp_year'],
+            'status' => $data['status']
+        ));
+
+        var_dump($set_meta);
+
+        return new WP_REST_Response(
+            array(
+                'id' => $cart->get_cart_id()
+            ),
+            200
+        );
 
         return $this->error_handler();
     }

@@ -32,21 +32,20 @@ class Xendit_Api_GDA_Cart {
         return bin2hex(random_bytes(16));
     }
 
-    public function check_cart_from_db($cart_id) {
+    public function check_cart_from_db($cart_id = false) {
 
         if($cart_id) {
             $check_cart = $cart_id;
         } else {
             $check_cart = $this->get_cart_id();
         }
-
         if(!$check_cart) return false;
 
         global $wpdb;
         $row = $wpdb->get_row(
             $wpdb->prepare(
                 "SELECT * FROM {$wpdb->prefix}gda_cart WHERE cart_id = '%s'",
-                $cart_id
+                $check_cart
             )
         );
         
@@ -120,7 +119,18 @@ class Xendit_Api_GDA_Cart {
             $table_name = $table_prefix . 'gda_cart_meta';
             $res = [];
             foreach($meta_array as $key => $val) {
-                $res[] = $wpdb->update($table_name, array('meta_value' => $val), array('cart_id' => $this->get_cart_id(), 'meta_key' => $key));
+                $check_for_row = $wpdb->get_row(
+                    $wpdb->prepare(
+                        "SELECT * FROM {$wpdb->prefix}gda_cart_meta WHERE cart_id = '%1s' AND meta_key = '%2s'",
+                        $this->get_cart_id(),
+                        $key
+                    )
+                );
+                if($check_for_row) {
+                    $res[] = $wpdb->update($table_name, array('meta_value' => $val), array('cart_id' => $this->get_cart_id(), 'meta_key' => $key));
+                } else {
+                    $res[] = $wpdb->insert($table_name, array('meta_key' => $key, 'meta_value' => $val, 'cart_id' => $this->get_cart_id()), array('%s', '%s', '%s'));
+                }
             }
             return $res;
         } catch (Exception $e) {
