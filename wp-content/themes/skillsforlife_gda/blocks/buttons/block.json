@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/buttons",
+    "title": "Buttons",
+    "description": "Column of buttons",
+    "category": "Text",
+    "keywords": ["buttons", "skills"],
+    "viewScript": ["blocks/buttons"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

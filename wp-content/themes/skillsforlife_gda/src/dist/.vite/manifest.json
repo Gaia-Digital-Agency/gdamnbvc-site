@@ -1,0 +1,173 @@
+{
+  "_create-shadow-BGDXDBXf.js": {
+    "file": "assets/create-shadow-BGDXDBXf.js",
+    "name": "create-shadow",
+    "imports": [
+      "_swiper-core-BkdoSGCI.js"
+    ]
+  },
+  "_effect-cards-DfObVGOc.js": {
+    "file": "assets/effect-cards-DfObVGOc.js",
+    "name": "effect-cards",
+    "imports": [
+      "_create-shadow-BGDXDBXf.js",
+      "_swiper-core-BkdoSGCI.js"
+    ]
+  },
+  "_navigation-CEbQnk2O.js": {
+    "file": "assets/navigation-CEbQnk2O.js",
+    "name": "navigation",
+    "imports": [
+      "_pagination-BC4BFXGV.js",
+      "_swiper-core-BkdoSGCI.js"
+    ]
+  },
+  "_pagination-BC4BFXGV.js": {
+    "file": "assets/pagination-BC4BFXGV.js",
+    "name": "pagination",
+    "imports": [
+      "_swiper-core-BkdoSGCI.js"
+    ]
+  },
+  "_swiper-core-BkdoSGCI.js": {
+    "file": "assets/swiper-core-BkdoSGCI.js",
+    "name": "swiper-core"
+  },
+  "js/app.js": {
+    "file": "assets/app-DqDwSoQN.js",
+    "name": "app",
+    "src": "js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "js/components/stack-slider/index.js",
+      "js/components/company-highlight/index.js",
+      "js/components/tab-content/index.js",
+      "js/components/navigation-stack-slider/index.js",
+      "js/components/image-text-slider/index.js",
+      "js/components/gallery/index.js",
+      "js/components/contact/index.js",
+      "js/components/buttons/index.js",
+      "js/components/container/index.js",
+      "js/components/indonesia-slider/index.js",
+      "js/components/spacer/index.js"
+    ],
+    "css": [
+      "assets/app-B6x2JCUG.css"
+    ]
+  },
+  "js/components/buttons/index.js": {
+    "file": "assets/index-B_uY9cCv.js",
+    "name": "index",
+    "src": "js/components/buttons/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "js/app.js"
+    ]
+  },
+  "js/components/company-highlight/index.js": {
+    "file": "assets/index-CQxugnor.js",
+    "name": "index",
+    "src": "js/components/company-highlight/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "js/app.js"
+    ]
+  },
+  "js/components/contact/index.js": {
+    "file": "assets/index-DM1L9kaq.js",
+    "name": "index",
+    "src": "js/components/contact/index.js",
+    "isDynamicEntry": true
+  },
+  "js/components/container/index.js": {
+    "file": "assets/index-DAEoN-Av.js",
+    "name": "index",
+    "src": "js/components/container/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "js/app.js"
+    ]
+  },
+  "js/components/gallery/index.js": {
+    "file": "assets/index-BdDcc0Hz.js",
+    "name": "index",
+    "src": "js/components/gallery/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_swiper-core-BkdoSGCI.js",
+      "_navigation-CEbQnk2O.js",
+      "_pagination-BC4BFXGV.js"
+    ]
+  },
+  "js/components/image-text-slider/index.js": {
+    "file": "assets/index-DU7H1AZn.js",
+    "name": "index",
+    "src": "js/components/image-text-slider/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_swiper-core-BkdoSGCI.js",
+      "_navigation-CEbQnk2O.js",
+      "_pagination-BC4BFXGV.js"
+    ]
+  },
+  "js/components/indonesia-slider/index.js": {
+    "file": "assets/index-ZUJWzXdO.js",
+    "name": "index",
+    "src": "js/components/indonesia-slider/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_swiper-core-BkdoSGCI.js",
+      "_pagination-BC4BFXGV.js",
+      "_create-shadow-BGDXDBXf.js"
+    ]
+  },
+  "js/components/navigation-stack-slider/index.js": {
+    "file": "assets/index-PXTo4oJT.js",
+    "name": "index",
+    "src": "js/components/navigation-stack-slider/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_swiper-core-BkdoSGCI.js",
+      "_create-shadow-BGDXDBXf.js",
+      "_effect-cards-DfObVGOc.js"
+    ]
+  },
+  "js/components/spacer/index.js": {
+    "file": "assets/index-C7j3oR93.js",
+    "name": "index",
+    "src": "js/components/spacer/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "js/app.js"
+    ]
+  },
+  "js/components/stack-slider/index.js": {
+    "file": "assets/index-CZ2v8AG2.js",
+    "name": "index",
+    "src": "js/components/stack-slider/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_swiper-core-BkdoSGCI.js",
+      "_effect-cards-DfObVGOc.js",
+      "_create-shadow-BGDXDBXf.js"
+    ]
+  },
+  "js/components/tab-content/index.js": {
+    "file": "assets/index-DrOORLrx.js",
+    "name": "index",
+    "src": "js/components/tab-content/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_swiper-core-BkdoSGCI.js"
+    ]
+  },
+  "js/editor.js": {
+    "file": "assets/editor-90IHgpam.js",
+    "name": "editor",
+    "src": "js/editor.js",
+    "isEntry": true,
+    "css": [
+      "assets/editor-CAy5wcT-.css"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/company-highlight",
+    "title": "Company Higlight",
+    "description": "Company Higlight",
+    "category": "Text",
+    "keywords": ["company", "highlight", "skills"],
+    "viewScript": ["blocks/company-highlight"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

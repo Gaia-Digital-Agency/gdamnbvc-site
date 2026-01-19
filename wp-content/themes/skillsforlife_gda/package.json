@@ -1,0 +1,42 @@
+{
+    "name": "Skills For Life",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "test": "vitest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+        "@tailwindcss/forms": "^0.5.3",
+        "@tailwindcss/typography": "^0.5.9",
+        "autoprefixer": "^10.4.14",
+        "browser-sync": "^2.29.1",
+        "browser-sync-webpack-plugin": "^2.3.0",
+        "cross-env": "^7.0.3",
+        "laravel-vite-plugin": "^2.0.1",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.62.1",
+        "sass-loader": "^12.6.0",
+        "tailwindcss": "^3.3.2",
+        "vite": "^7.3.0",
+        "vitest": "^3.2.4"
+    },
+    "dependencies": {
+        "@wordpress/hooks": "^4.37.0",
+        "calendar": "^0.1.1",
+        "choices.js": "^11.1.0",
+        "glightbox": "^3.3.1",
+        "gsap": "^3.13.0",
+        "jsdom": "^26.1.0",
+        "locomotive-scroll": "^4.1.4",
+        "packery": "^2.1.2",
+        "swiper": "^11.2.10",
+        "vite-plugin-static-copy": "^3.1.4"
+    }
+}

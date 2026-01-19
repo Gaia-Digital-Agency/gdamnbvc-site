@@ -1,0 +1,43 @@
+.block-gallery {
+    .navigation-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        background: rgba(23, 23, 25, 0.5);
+
+        border-radius: 100px;
+
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+
+        overflow: hidden;
+        z-index: 9;
+
+        width: 100px;
+        height: 100px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all .4s ease;
+        opacity: 0;
+        &.next-button {
+            right: 15px;
+        }
+        &.prev-button {
+            left: 15px;
+        }
+    }
+
+    .swiper:hover .navigation-button {
+        opacity: 1;
+    }
+    .swiper-pagination {
+        --swiper-pagination-bottom: 0;
+        --swiper-pagination-bullet-size: 10px;
+        --swiper-pagination-bullet-horizontal-gap: 5px;
+        --swiper-pagination-color: #171719;
+    }
+}

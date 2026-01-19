@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/indonesia-slider",
+    "title": "Indonesia Slider",
+    "description": "Indonesia Slider",
+    "category": "Text",
+    "keywords": ["indonesia", "slider", "skills"],
+    "viewScript": ["blocks/indonesia-slider"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

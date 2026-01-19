@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/text-floating",
+    "title": "Text Floating",
+    "description": "Text Floating",
+    "category": "Text",
+    "keywords": ["text", "floating", "skills"],
+    "viewScript": ["blocks/text-floating"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

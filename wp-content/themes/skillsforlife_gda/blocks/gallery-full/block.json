@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/gallery-full",
+    "title": "Gallery Full",
+    "description": "Gallery non carousel for images & videos",
+    "category": "Text",
+    "keywords": ["gallery", "skills"],
+    "viewScript": ["blocks/gallery-full"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

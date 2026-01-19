@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'GT America';
+    src: url('./src/fonts/gtamerica/GTAmerica-CompressedBold.woff2') format('woff2'),
+        url('./src/fonts/gtamerica/GTAmerica-CompressedBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America Extended';
+    src: url('./src/fonts/gtamerica/GTAmerica-ExtendedBlack.woff2') format('woff2'),
+        url('./src/fonts/gtamerica/GTAmerica-ExtendedBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America Extended';
+    src: url('./src/fonts/gtamerica/GTAmerica-ExtendedLight.woff2') format('woff2'),
+        url('./src/fonts/gtamerica/GTAmerica-ExtendedLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('./src/fonts/gtamerica/GTAmerica-Regular.woff2') format('woff2'),
+        url('./src/fonts/gtamerica/GTAmerica-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America Extended';
+    src: url('./src/fonts/gtamerica/GTAmerica-ExtendedMedium.woff2') format('woff2'),
+        url('./src/fonts/gtamerica/GTAmerica-ExtendedMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('./src/fonts/gtamerica/GTAmerica-Medium.woff2') format('woff2'),
+        url('./src/fonts/gtamerica/GTAmerica-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

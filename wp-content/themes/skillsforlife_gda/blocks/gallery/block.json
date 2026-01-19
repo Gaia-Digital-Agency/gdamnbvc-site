@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/gallery",
+    "title": "Gallery",
+    "description": "Gallery for images & videos",
+    "category": "Text",
+    "keywords": ["gallery", "skills"],
+    "viewScript": ["blocks/gallery"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

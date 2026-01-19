@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/full-image-overlay",
+    "title": "Full Image overlay",
+    "description": "Full Image with overlay",
+    "category": "Text",
+    "keywords": ["overlay", "full", "image", "skills"],
+    "viewScript": ["blocks/full-image-overlay"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

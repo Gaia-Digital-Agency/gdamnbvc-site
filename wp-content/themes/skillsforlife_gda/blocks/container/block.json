@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/container",
+    "title": "Container",
+    "description": "Container",
+    "category": "Text",
+    "keywords": ["container", "skills"],
+    "viewScript": ["blocks/container"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

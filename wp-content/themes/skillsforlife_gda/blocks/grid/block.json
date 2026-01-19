@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/grid",
+    "title": "Grid",
+    "description": "Grid / Row",
+    "category": "Text",
+    "keywords": ["grid", "row", "skills"],
+    "viewScript": ["blocks/grid"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

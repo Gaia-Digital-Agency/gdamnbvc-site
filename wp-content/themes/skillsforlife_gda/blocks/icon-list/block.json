@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/icon-list",
+    "title": "Icon List",
+    "description": "Icon List",
+    "category": "Text",
+    "keywords": ["icon", "list", "skills"],
+    "viewScript": ["blocks/icon-list"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

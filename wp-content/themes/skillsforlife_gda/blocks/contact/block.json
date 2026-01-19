@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/contact",
+    "title": "Contact",
+    "description": "Contact",
+    "category": "Text",
+    "keywords": ["contact", "skills"],
+    "viewScript": ["blocks/contact"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

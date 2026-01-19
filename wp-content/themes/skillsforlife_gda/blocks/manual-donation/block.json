@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/manual-donation",
+    "title": "Manual Donation",
+    "description": "Manual Donation",
+    "category": "Text",
+    "keywords": ["indonesia", "slider", "skills"],
+    "viewScript": ["blocks/manual-donation"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

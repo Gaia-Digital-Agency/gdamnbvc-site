@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/image-text-slider",
+    "title": "Image Text Slider",
+    "description": "Image Text Slider",
+    "category": "Text",
+    "keywords": ["image", "text", "slider", "skills"],
+    "viewScript": ["blocks/image-text-slider"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

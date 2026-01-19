@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/image",
+    "title": "Image",
+    "description": "Image",
+    "category": "Text",
+    "keywords": ["image", "skills"],
+    "viewScript": ["blocks/image"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

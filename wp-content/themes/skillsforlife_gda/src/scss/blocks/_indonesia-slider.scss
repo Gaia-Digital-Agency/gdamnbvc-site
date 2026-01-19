@@ -1,0 +1,64 @@
+.block-indonesia-slider {
+    .bg-el {
+        background-position: center;
+        background-size: cover;
+    }
+
+    .box {
+        border-radius: 20px;
+        background: rgba(241, 233, 228, 0.1);
+
+        border: 1px solid transparent;
+        background-clip: padding-box;
+
+        position: relative;
+        backdrop-filter: blur(150px);
+        -webkit-backdrop-filter: blur(150px);
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 1px;
+            background: linear-gradient(300deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: add, add;
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+    }
+
+    .mobile-box::before {
+        border-radius: 50%;
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        // column-gap: 10px;
+        display: flex;
+        justify-content: center;
+        --swiper-pagination-bullet-horizontal-gap: 5px;
+
+        @media(min-width: 1024px) {
+            display: none;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #e9e9e9;
+            cursor: pointer;
+            border-radius: 50%;
+            --swiper-pagination-bullet-inactive-opacity: 1;
+
+            &.swiper-pagination-bullet-active {
+                background: #171719;
+            }
+        }
+    }
+}

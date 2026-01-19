@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/navigation-stack-slider",
+    "title": "Navigation Stacking Slider",
+    "description": "Navigation Stackin' slider",
+    "category": "Text",
+    "keywords": ["navigation", "stack", "slider", "skills"],
+    "viewScript": ["blocks/navigation-stack-slider"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

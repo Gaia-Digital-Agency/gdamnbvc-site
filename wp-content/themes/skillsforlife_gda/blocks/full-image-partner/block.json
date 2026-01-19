@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/full-image-partner",
+    "title": "Full Image Partner",
+    "description": "Full Image with partners logo",
+    "category": "Text",
+    "keywords": ["partner", "full", "image", "skills"],
+    "viewScript": ["blocks/full-image-partner"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

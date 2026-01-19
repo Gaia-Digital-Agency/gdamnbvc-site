@@ -1,0 +1,27 @@
+#donation-form {
+    .select-state {
+        transition: all .4s ease;
+        cursor: pointer;
+        &.active {
+            @apply bg-theme-black text-white;
+        }
+    }
+    .choices {
+        .choices__item {
+            @apply text-h3;
+        }
+        &::after {
+            border-width: 10px;
+            right: 25px;
+        }
+        .choices__inner {
+            background: transparent;
+            border-color: #171719;
+            padding-left: 20px;
+        }
+        .choices__list--dropdown, .choices__list[aria-expanded] {
+            border-color: #171719;
+            z-index: 9;
+        }
+    }
+}

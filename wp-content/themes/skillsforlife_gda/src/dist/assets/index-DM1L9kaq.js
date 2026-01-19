@@ -1,0 +1,1 @@
+const l=e=>{const t=()=>{const r=e.querySelector(".grid").querySelector(".blocks-wrapper").getBoundingClientRect(),o=e.querySelector(".overlay");o.style.left=`${r.left}px`};window.addEventListener("resize",t),t()};export{l as initContact};

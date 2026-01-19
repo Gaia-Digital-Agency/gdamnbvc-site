@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/text",
+    "title": "Text",
+    "description": "Text",
+    "category": "Text",
+    "keywords": ["text", "skills"],
+    "viewScript": ["blocks/text"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

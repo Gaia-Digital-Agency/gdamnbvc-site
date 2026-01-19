@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/column",
+    "title": "Column",
+    "description": "column",
+    "category": "Text",
+    "keywords": ["column", "skills"],
+    "viewScript": ["blocks/column"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

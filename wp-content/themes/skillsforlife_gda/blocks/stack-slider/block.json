@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/stack-slider",
+    "title": "Stacking Slider",
+    "description": "Stackin' slider",
+    "category": "Text",
+    "keywords": ["stack", "slider", "skills"],
+    "viewScript": ["blocks/stack-slider"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

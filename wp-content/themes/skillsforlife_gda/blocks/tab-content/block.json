@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/tab-content",
+    "title": "Tab Content",
+    "description": "Tab Content",
+    "category": "Text",
+    "keywords": ["tab", "content", "skills"],
+    "viewScript": ["blocks/tab-content"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

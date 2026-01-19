@@ -1,0 +1,79 @@
+@use "fonts";
+@use "swiper/css";
+@use "swiper/css/effect-cards";
+@use "swiper/css/effect-fade";
+@use "swiper/css/navigation";
+@use "swiper/css/pagination";
+@use "glightbox/dist/css/glightbox.css";
+@use "choices.js/src/styles/choices.scss";
+@use "./blocks/donation-form";
+@use "./blocks/text";
+@use "./blocks/indonesia-slider";
+@use "./blocks/tab-content";
+@use "./blocks/navigation-stack-slider";
+@use "./blocks/image-text-slider";
+@use "./blocks/gallery";
+@use "./blocks/spacer";
+@use "./blocks/manual-donation";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+.padding-avoid-nav {
+    padding-top: var(--nav-height, 100px);
+}
+
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    z-index: 99999;
+}
+
+
+header {
+    .menu-item {
+
+        a {
+            position: relative;
+    
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                width: 0%;
+                right: 100%;
+                left: 0;
+                height: 2px;
+                background: #000;
+                transition: .4s all ease;
+            }
+        }
+        &:hover a::before, &.active a::before {
+            right: 0;
+            width: 100%;
+        }
+    }
+}
+
+.image-ratio {
+    @apply absolute inset-0 w-full h-full object-cover;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 1em;
+
+    li::marker {
+        font-size: .65em;
+    }
+}
+
+.swiper .swiper-navigation .swiper-button-disabled {
+    display: none;
+}

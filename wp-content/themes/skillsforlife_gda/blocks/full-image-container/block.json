@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/full-image-container",
+    "title": "Full Image Container",
+    "description": "Full Image with Container",
+    "category": "Text",
+    "keywords": ["container", "full", "image", "skills"],
+    "viewScript": ["blocks/full-image-container"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

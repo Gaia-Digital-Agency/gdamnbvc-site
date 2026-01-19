@@ -1,0 +1,23 @@
+{
+    "name": "revaar/xendit-api-gda",
+    "autoload": {
+        "psr-4": {
+            "Revaar\\XenditApiGda\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "reva",
+            "email": "reva@gaiada.com"
+        }
+    ],
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/xendit/xendit-php.git"
+      }
+    ],
+    "require": {
+      "xendit/xendit-php": "7.0.0"
+    }
+}
