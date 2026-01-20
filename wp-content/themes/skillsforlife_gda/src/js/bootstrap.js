@@ -5,12 +5,14 @@ const componentsMap = {
     '.block-navigation-stack-slider': () => import('./components/navigation-stack-slider'),
     '.block-image-text-slider': () => import('./components/image-text-slider'),
     '.block-gallery': () => import('./components/gallery'),
+    '.block-gallery-full': () => import('./components/gallery-full'),
     '.block-contact': () => import('./components/contact'),
     '.block-buttons': () => import('./components/buttons'),
     '.block-container': () => import('./components/container'),
     '.block-indonesia-slider': () => import('./components/indonesia-slider'),
     '.wp-block-spacer': () => import('./components/spacer'),
-    '.block-manual-donation' : () => import('./components/manual-donation')
+    '.block-manual-donation' : () => import('./components/manual-donation'),
+    '#donation-form': () => import('./components/donation-form')
 }
 
 const initComponents = async (editor = false) => {

@@ -35,7 +35,7 @@
     </div>
 </header>
 
-<aside id="mobile-menu" class="fixed inset-0 w-full h-full z-[999999] bg-white md:hidden block">
+<aside id="mobile-menu" class="fixed inset-0 w-full h-full !z-[999999] bg-white nav:hidden block">
     <div class="container h-full px-[50px] overflow-y-scroll">
         <div class="flex flex-col h-full justify-between">
 
@@ -58,14 +58,14 @@
 
                 <div class="menu-wrapper">
                     <?php foreach($mobile as $i => $menu) : ?>
-                        <div class="menu-item mb-[5px]">
-                            <a href="<?= $menu['url'] ?>" class="text-h1 leading-[50px] font-light font-extend"><?= $menu['title'] ?></a>
+                        <div class="menu-item h-10 flex items-center pb-[5px] mb-[30px]<?= $menu['is_active'] ? ' active' : '' ?>">
+                            <a href="<?= $menu['url'] ?>" class="text-menu-header leading-[50px] font-light font-extend"><?= $menu['title'] ?></a>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
 
-            <div class="wrapper pb-[50px]">
+            <div class="wrapper py-[50px]">
                 <div class="socials-wrapper flex gap-x-[25px] order-2 md:order-1">
                     <div class="socials-item">
                         <a href="#">

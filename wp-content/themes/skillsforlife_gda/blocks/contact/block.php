@@ -30,8 +30,8 @@ $form = get_field('form');
 ?>
 <section class="<?= esc_attr($classes) ?> relative" id="<?= esc_attr($id) ?>">
     <div class="absolute bg-[#E9E9E9] right-0 top-0 bottom-0 overlay hidden md:block"></div>
-    <div class="container pb-[200px]">
-        <p class="text-h1 font-extend font-medium absolute text-center md:text-left z-10 py-[35px]">Share <span class="font-light">Your</span> Questions, Idea, <span class="font-light">and</span> Feedback</p>
+    <div class="container md:pb-[200px]">
+        <p class="text-h1 font-extend font-medium md:absolute text-center md:text-left z-10 py-[35px]">Share <span class="font-light">Your</span> Questions, Idea, <span class="font-light">and</span> Feedback</p>
     </div>
     <div class="relative container">
         <div class="grid grid-cols-12 gap-y-[60px]">

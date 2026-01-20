@@ -1,0 +1,1 @@
+const a=t=>{const e=()=>{const n=t.querySelector(".target-right").getBoundingClientRect(),r=window.innerWidth-n.right,i=t.querySelector(".desktop-overlay");i.style.right=`${r}px`};window.addEventListener("resize",e),e()};export{a as initManualDonation};

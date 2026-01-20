@@ -1,6 +1,6 @@
 import gsap from "gsap"
-import Swiper from "swiper";
-import Choices from "choices.js";
+import Draggable from "gsap/src/Draggable";
+gsap.registerPlugin(Draggable)
 
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
@@ -96,193 +96,61 @@ const initHeaderNav = () => {
 const initMobileMenu = () => {
     const mobileMenuEl = document.querySelector('#mobile-menu')
     const hamburgerEl = document.querySelector('header .hamburger')
-    const tl = gsap.timeline({ paused: true })
     gsap.set(mobileMenuEl, {
-        xPercent: -100
+        x: "-100%"
     })
-    // tl.fromTo(mobileMenuEl, {
-    //     xPercent: -100
-    // }, {
-    //     xPercent: 0
+    // gsap.from(mobileMenuEl, {
+    //     x: -100
     // })
-    hamburgerEl.addEventListener('click', () => {
+
+    const openHandler = () => {
         gsap.to(mobileMenuEl, {
             // transform: "translateX(-100%)"
-            xPercent: 0
+            x: "0%"
         })
-        disableScroll()
-    })
-    mobileMenuEl.querySelector('.close-button').addEventListener('click', () => {
+        // disableScroll()
+    }
+    const closeHandler = () => {
         gsap.to(mobileMenuEl, {
             // transform: "translateX(0%)"
-            xPercent: -100
+            x: "-100%"
         })
-        enableScroll()
+        // enableScroll()
+    }
+    hamburgerEl.addEventListener('click', () => {
+        openHandler()
     })
-}
-
-const triggerDonationForm = () => {
-
-}
-
-
-const initDonationForm = () => {
-
-    const formComponent = document.querySelector('#donation-form')
-    const overlay = formComponent.querySelector('.overlay')
-    const outerWrapper = formComponent.querySelector('.outer-wrapper')
-
-    const triggerForm = document.querySelectorAll('.trigger-donation-form')
-    gsap.set(formComponent, {
-        visibility: 'hidden'
-    })
-    gsap.set(outerWrapper, {
-        xPercent: -100
-    })
-    gsap.set(overlay, {
-        autoAlpha: 0
-    })
-    triggerForm.forEach(component => {
-        component.addEventListener('click', () => {
-            gsap.to(formComponent, {
-                visibility: 'visible'
-            })
-            gsap.to(outerWrapper, {
-                xPercent: 0
-            })
-            gsap.to(overlay, {
-                autoAlpha: 1
-            })
-        })
-    })
-    const swiperEl = formComponent.querySelector('.swiper')
-    const choices = [
-        {
-            value: "mr",
-            label: "Mr"
-        },
-        {
-            value: "mrs",
-            label: "Mrs"
-        },
-        {
-            value: "miss",
-            label: "Miss"
-        },
-        {
-            value: "ms",
-            label: "Ms"
-        },
-    ]
-    new Choices(formComponent.querySelector('#input-title'), {
-        choices,
-        searchEnabled: false,
-        itemSelectText: "",
-    })
-    const swiper = new Swiper(swiperEl, {
-        slidesPerView: 1,
-        allowTouchMove: false,
+    mobileMenuEl.querySelector('.close-button').addEventListener('click', () => {
+        closeHandler()
     })
 
-    const steps = [
-        [
-            {
-                name: "amount",
-                validation: (value) => {
-                    return parseInt(value) != NaN &&  value > 10000
-                },
-            },
-            {
-                name: "period",
-                validation: (value) => {
-                    return (value == 'once') || (value == 'monthly') || (value == 'yearly')
-                }
-            }
-        ],
-        [
-            {
-                name: 'type',
-                validation: value => {
-                    return value == 'individual' || value == 'organization'
-                }
-            },
-            {
-                
-            }
-        ]
-    ]
-
-    const validationStep = (step) => {
-        let count = 0
-        swiper.slides[step].querySelectorAll('input[type="hidden"].mandatory').forEach(el => {
-            steps[0].filter(validating => {
-                if(el.name == validating.name && validating.validation(el.value)) {
-                    count = count + 1;
+    const createDrag = () => {
+        if(mobileMenuEl.draggable) return
+        const wrappers = mobileMenuEl.querySelectorAll('.wrapper')
+        const wrapperHeight = Array.from(wrappers).map(wrapper => wrapper.clientHeight).reduce((acc, cur) => acc + cur)
+        const CLOSE_X = -120
+        mobileMenuEl.draggable = Draggable.create(mobileMenuEl, {
+            type: 'x',
+            bounds: { minX: -window.innerWidth, maxX: 0 },
+            inertia: true,
+            onDragEnd() {
+                if (this.x < CLOSE_X) {
+                    closeHandler()
                 } else {
-
+                    gsap.to(mobileMenuEl, {
+                        x: "0%",
+                        duration: 0.25,
+                        ease: 'power3.out'
+                    })
                 }
-            })
+            }
         })
-        return count >= steps[step].length
+        return
     }
-
-
-    const amountSelection = () => {
-        const selections = formComponent.querySelectorAll('.amount-wrapper .amount-select')
-        const resetActive = () => {
-            selections.forEach(selection => {
-                selection.classList.remove('active')
-            })
-        }
-        const input = formComponent.querySelector('#input-amount')
-        const manualInput = formComponent.querySelector('#manual-input')
-        selections.forEach(selection => {
-            selection.addEventListener("click", () => {
-                resetActive()
-                selection.classList.add('active')
-                input.value = selection.dataset.amount
-                manualInput.value=selection.dataset.amount
-            })
-        })
-        manualInput.addEventListener('change', () => {
-            resetActive()
-            input.value = manualInput.value 
-        })
-    }
-
-    const periodSelection = () => {
-        const resetActive = () => {
-            selections.forEach(selection => {
-                selection.classList.remove('active')
-            })
-        }
-        const input = formComponent.querySelector('#input-period')
-        const selections = formComponent.querySelectorAll('.period-select')
-        selections.forEach(selection => {
-            selection.addEventListener('click', () => {
-                resetActive()
-                selection.classList.add('active')
-
-                input.value = selection.dataset.period
-            })
-        })
-    }
-
-
-    
-
-    amountSelection()
-    periodSelection()
-    const nextButton = formComponent.querySelector('.next-button')
-    nextButton.addEventListener('click', () => {
-        console.log(validationStep(swiper.activeIndex))
-        if(validationStep(swiper.activeIndex)) {
-            swiper.slideNext()
-        }
-    })
-
+    // window.addEventListener('resize', createDrag)
+    createDrag()
 
 }
 
 
-export { determineNavHeight, initHeaderNav, initMobileMenu, initDonationForm }
+export { determineNavHeight, initHeaderNav, initMobileMenu, enableScroll, disableScroll }

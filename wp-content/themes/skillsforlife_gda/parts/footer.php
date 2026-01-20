@@ -27,12 +27,6 @@
                         </div>
                         <?php endif; ?>
                         <?php $counter = $counter + 1; ?>
-                        <!-- <div class="menu-item md:mb-1 mb-6">
-                            <a href="#" class="text-white font-extend text-menu-footer font-medium md:font-light">Our Project</a>
-                        </div>
-                        <div class="menu-item md:mb-1 mb-6">
-                            <a href="#" class="text-white font-extend text-menu-footer font-medium md:font-light">Our Event</a>
-                        </div> -->
                         <?php endforeach; ?>
                     </div>
                     <div class="menu-col">
@@ -44,25 +38,8 @@
                         </div>
                         <?php endif; ?>
                         <?php $counter = $counter + 1; ?>
-                        <!-- <div class="menu-item md:mb-1 mb-6">
-                            <a href="#" class="text-white font-extend text-menu-footer font-medium md:font-light">Our Project</a>
-                        </div>
-                        <div class="menu-item md:mb-1 mb-6">
-                            <a href="#" class="text-white font-extend text-menu-footer font-medium md:font-light">Our Event</a>
-                        </div> -->
                         <?php endforeach; ?>
                     </div>
-                    <!-- <div class="menu-col">
-                        <div class="menu-item md:mb-1 mb-6">
-                            <a href="#" class="text-white font-extend text-menu-footer font-medium md:font-light">Get Involved</a>
-                        </div>
-                        <div class="menu-item md:mb-1 mb-6">
-                            <a href="#" class="text-white font-extend text-menu-footer font-medium md:font-light">Gallery</a>
-                        </div>
-                        <div class="menu-item md:mb-1 mb-6">
-                            <a href="#" class="text-white font-extend text-menu-footer font-medium md:font-light">Contact Us</a>
-                        </div>
-                    </div> -->
 
                 </div>
 
@@ -94,11 +71,11 @@
                 </div>
                 
                 <div class="extra-links flex gap-x-8 order-2 md:order-2">
-                    <div class="link-item text-center mb-2 md:mb-0">
-                        <a href="#" class="text-theme-grey text-caption-small md:font-light font-bold opacity-50 md:opacity-100 font-extend">Privacy Policy</a>
+                    <div class="link-item menu-item text-center mb-2 md:mb-0">
+                        <a href="#" class="text-theme-grey-2 md:text-theme-grey text-caption-small md:text-caption md:font-light font-bold opacity-50 md:opacity-100 font-extend">Privacy Policy</a>
                     </div>
-                    <div class="link-item text-center mb-2 md:mb-0">
-                        <a href="#" class="text-theme-grey text-caption-small md:font-light font-bold opacity-50 md:opacity-100 font-extend">Terms & Conditions</a>
+                    <div class="link-item menu-item text-center mb-2 md:mb-0">
+                        <a href="#" class="text-theme-grey-2 md:text-theme-grey text-caption-small md:text-caption md:font-light font-bold opacity-50 md:opacity-100 font-extend">Terms & Conditions</a>
                     </div>
                 </div>
 
@@ -107,9 +84,10 @@
     </div>
 </footer>
 
-<div id="donation-form" class="fixed inset-0 z-[999999]">
-    <div class="overlay absolute inset-0 bg-[rgba(0,0,0,.4)]"></div>
-    <div class="p-[50px] wrapper bg-white max-w-3xl h-full relative">
+
+<div id="donation-overlay" class="fixed inset-0 bg-[rgba(0,0,0,.4)] z-[999999]"></div>
+<div id="donation-form" class="fixed left-0 top-0 bottom-0 z-[999999]" role="dialog" aria-modal="true" hidden>
+    <div class="p-[50px] outer-wrapper wrapper bg-white max-w-3xl h-full relative">
         <form action="#" class="h-full">
             <div class="flex flex-col justify-between h-full">
                 <div class="swiper mx-0">
@@ -123,17 +101,17 @@
     
                                 <div class="amount-wrapper grid grid-cols-3 gap-x-[25px] mb-10">
                                     <div class="box text-center col-span-1">
-                                        <div class="inner py-[25px] border border-theme-black select-state amount-select" data-amount="100000">
+                                        <div class="inner py-[25px] border border-theme-black select-state amount-select" tabindex="0" data-amount="100000">
                                             <p class="text-cta font-medium">IDR 100,000</p>
                                         </div>
                                     </div>
                                     <div class="box text-center col-span-1">
-                                        <div class="inner py-[25px] border border-theme-black select-state amount-select" data-amount="500000">
+                                        <div class="inner py-[25px] border border-theme-black select-state amount-select" tabindex="0" data-amount="500000">
                                             <p class="text-cta font-medium">IDR 500,000</p>
                                         </div>
                                     </div>
                                     <div class="box text-center col-span-1">
-                                        <div class="inner py-[25px] border border-theme-black select-state amount-select" data-amount="1000000">
+                                        <div class="inner py-[25px] border border-theme-black select-state amount-select" tabindex="0" data-amount="1000000">
                                             <p class="text-cta font-medium">IDR 1,000,000</p>
                                         </div>
                                     </div>
@@ -187,7 +165,7 @@
                                         </div>
                                     </div>
                                     <div class="box text-center col-span-1">
-                                        <div class="inner py-4 border border-theme-black select-state type-select" data-amount="organization">
+                                        <div class="inner py-4 border border-theme-black select-state type-select" data-type="organization">
                                             <p class="text-cta font-medium">As Organization</p>
                                         </div>
                                     </div>
@@ -199,39 +177,39 @@
                                     <div class="grid grid-cols-12 gap-[50px]">
                                         <div class="input-wrapper md:col-span-6 col-span-12">
                                             <label class="mb-[10px] block" for="#">Title</label>
-                                            <select name="title" class="w-full" id="input-title">
+                                            <select name="title" class="w-full" disabled id="input-title">
                                                 <option value="mr">Mr</option>
                                                 <option value="mrs">Mrs</option>
                                                 <option value="miss">Miss</option>
                                                 <option value="ms">Ms</option>
                                             </select>
                                         </div>
-                                        <div class="input-wrapper md:col-span-6 col-span-12">
+                                        <div class="input-wrapper md:col-span-6 col-span-12 organization-wrapper">
                                             <label class="mb-[10px] block" for="#">Organization Name</label>
-                                            <input type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
+                                            <input disabled type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
                                         </div>
                                         <div class="input-wrapper md:col-span-6 col-span-12">
                                             <label class="mb-[10px] block" for="#">First Name</label>
-                                            <input type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
+                                            <input disabled type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
                                         </div>
                                         <div class="input-wrapper md:col-span-6 col-span-12">
                                             <label class="mb-[10px] block" for="#">Last Name</label>
-                                            <input type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
+                                            <input disabled type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
                                         </div>
                                         <div class="input-wrapper md:col-span-6 col-span-12">
                                             <label class="mb-[10px] block" for="#">Email</label>
-                                            <input type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
+                                            <input disabled type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
                                         </div>
                                         <div class="input-wrapper md:col-span-6 col-span-12">
                                             <label class="mb-[10px] block" for="#">Phone</label>
-                                            <input type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
+                                            <input disabled type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
                                         </div>
                                         <div class="input-wrapper md:col-span-6 col-span-12">
                                             <label class="mb-[10px] block" for="#">Date of Birth</label>
                                             <div class="flex gap-x-[25px]">
-                                                <input type="number" min="1" max="31" class="w-full focus:outline-0 border text-center border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" placeholder="DD" style="padding: 15.5px 0; outline: none; min-height: 44px;">
-                                                <input type="number" min="1" max="12" class="w-full focus:outline-0 border text-center border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" placeholder="MM" style="padding: 15.5px 0; outline: none; min-height: 44px;">
-                                                <input type="number" min="1" class="w-2/5 focus:outline-0 border text-center border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" placeholder="YYYY" style="padding: 15.5px 0; outline: none; min-height: 44px; flex-shrink: 0;">
+                                                <input disabled type="number" min="1" max="31" class="w-full focus:outline-0 border text-center border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" placeholder="DD" style="padding: 15.5px 0; outline: none; min-height: 44px;">
+                                                <input disabled type="number" min="1" max="12" class="w-full focus:outline-0 border text-center border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" placeholder="MM" style="padding: 15.5px 0; outline: none; min-height: 44px;">
+                                                <input disabled type="number" min="1" class="w-2/5 focus:outline-0 border text-center border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" placeholder="YYYY" style="padding: 15.5px 0; outline: none; min-height: 44px; flex-shrink: 0;">
                                             </div>
                                         </div>
                                     </div>

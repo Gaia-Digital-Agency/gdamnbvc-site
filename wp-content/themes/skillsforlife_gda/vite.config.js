@@ -14,6 +14,12 @@ export const phpFileReload = () => {
                         type: 'full-reload'
                     })
                 }
+                // Should be temp while i debugging on wsl is not working smoothly HMR
+                if(file.endsWith('.js')) {
+                    ws.send({
+                        type: 'full-reload'
+                    })
+                }
             })
         }
     }

@@ -1,0 +1,19 @@
+{
+    "apiVersion": 2,
+    "name": "acf/image-with-details",
+    "title": "Image with Details",
+    "description": "Image with details in overlay",
+    "category": "Text",
+    "keywords": ["image", "skills"],
+    "viewScript": ["blocks/image-with-details"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+      "align": false,
+      "anchor": true,
+      "customClassName": true,
+      "jsx": true
+    }
+  }

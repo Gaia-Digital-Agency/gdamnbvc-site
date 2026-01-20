@@ -61,33 +61,9 @@ if(!function_exists('companyHighlightIsLandscape')) {
 }
 
 if(!function_exists('getPositionDummy')) {
-    // $positionFixed = [
-    //     [
-    //         'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-max'
-    //     ],
-    //     [
-    //         'left-[100px] top-0',
-    //         'right-0 bottom-0'
-    //     ],
-    //     [
-    //         'right-0 top-1/2 -translate-y-1/2 w-max',
-    //         'bottom-0 left-1/2 -translate-x-1/2 w-max',
-    //         'left-[100px] top-0'
-    //     ]
-    // ];
     function getPositionDummy($arr, $currentIndex) {
-        // if(count($arr) == 2 && $currentIndex == 1) {
-        //     return 2;
-        // }
-        // if($currentIndex == 0 && companyHighlightIsLandscape($arr[$currentIndex])) {
-        //     return 3;
-        // }
-        // var_dump($positionFixed);
-        // var_dump($positionFixed[(count($arr) - 1)][$currentIndex]);
         return $positionFixed[(count($arr) - 1)][$currentIndex];
-        // return $currentIndex;
     }
-    // var_dump($positionFixed[1]);
 }
 ?>
 
@@ -103,12 +79,11 @@ if(!function_exists('getPositionDummy')) {
                     <div class="slides-item lg:mb-[100px] lg:max-w-[1140px] max-w-[390px] h-[385px] lg:h-[650px] mx-auto relative">
                         <div class="flex flex-col lg:flex-row w-full h-full lg:items-center lg:justify-between justify-center relative" style="z-index: 10;">
                             <div class="year text-large-2 font-extend font-bold text-white tracking-[0.05em] lg:flex-[0_0_25%]"><?= $slide['year'] ?></div>
-                            <div class="description text-h3 font-medium text-white max-w-[650px] lg:flex-[0_0_75%]"><?= $slide['description'] ?></div>
+                            <div class="description text-h3 font-medium text-white max-w-[650px] lg:flex-[0_0_75%] lg:block flex items-center lg:h-auto h-[120px]"><?= $slide['description'] ?></div>
                         </div>
                         <?php foreach($slide['images'] as $i => $image) : ?>
                             <?php ?>
                             <?php $classes = $positionFixed[(count($slide['images']) - 1)][$i] ?>
-                            <?php // var_dump($positionFixed[count($slide['images']) - 1][$i]) ?>
                             <div class="image-item-wrapper absolute <?= $classes ?>" data-index="<?= $i ?>" style="z-index: <?= $i + 1 ?>;">
                                 <div class="image-wrapper">
                                     <div class="inner overflow-y-hidden">

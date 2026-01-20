@@ -106,7 +106,11 @@ const containerStyles = ({ addComponents }) => {
     ],
     safelist: [
       "container-padding-mobile",
-      "md:col-start-8"
+      "md:col-start-8",
+      "order-3",
+      "md:order-3",
+      "order-4",
+      "md:order-4"
     ],
     theme: {
       container: {

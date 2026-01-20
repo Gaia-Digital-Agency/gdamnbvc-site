@@ -43,6 +43,7 @@ if($mobileSpace) {
     $defaultStyles = '--default-height: ' . $mobileSpace . 'px;';
 }
 
+$styles = $styles . $defaultStyles;
 $previewClass = $is_preview ? ' is-preview' : '';
 
 ?>

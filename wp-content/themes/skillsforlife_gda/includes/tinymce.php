@@ -95,7 +95,7 @@ add_action('acf/input/admin_footer', function(){
                             {title: "Regular", inline: 'span', classes: 'font-sans'},
                             {title: "Extend", inline: 'span', classes: 'font-extend'}
                         ]
-                    }
+                    },
                 ];
                 return mceInit;
             });

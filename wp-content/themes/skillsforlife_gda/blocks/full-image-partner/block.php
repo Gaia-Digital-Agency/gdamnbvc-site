@@ -52,8 +52,8 @@ if($background) {
         <div class="wrapper px-0 z-[2] relative">
             <div class="grid grid-cols-12 items-center">
                 <div class="col-span-12 block md:hidden">
-                    <div class="logo-wrapper container-mobile mb-[30px]">
-                        <img src="<?= $logoMobile ? $logoMobile['url'] : $logo['url'] ?>" class="w-full w-3/4" alt="">
+                    <div class="logo-wrapper container-mobile mb-[30px] w-3/4">
+                        <img src="<?= $logoMobile ? $logoMobile['url'] : $logo['url'] ?>" class="w-full" alt="">
                     </div>
                 </div>
                 <div class="col-span-12 md:col-span-7 <?= $imageRight ? 'md:order-1' : 'md:order-2' ?>">

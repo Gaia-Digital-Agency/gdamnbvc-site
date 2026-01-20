@@ -39,19 +39,26 @@ $button = get_field('button');
                 if($media['type'] == 'video') {$videoCounter++;};
             }
             ?>
-            <div class="counter-wrapper container-mobile text-h3 md:mb-[50px] mb-[20px]">
-                <?php if($imageCounter) : ?>
-                    <span class="font-medium">
-                    <?= $imageCounter ?> Picture<?= $imageCounter > 1 ? 's' : '' ?>
-                    </span>
-                <?php endif; ?>
-                <?php if($imageCounter && $videoCounter) : ?>
-                    and
-                <?php endif; ?>
-                <?php if($videoCounter) : ?>
-                    <span class="font-medium">
-                        <?= $videoCounter ?> Video<?= $videoCounter > 1 ? 's' : '' ?>
-                    </span>
+            <div class="flex items-center md:mb-[50px] mb-[20px] container-mobile justify-between">
+                <div class="counter-wrapper text-h3">
+                    <?php if($imageCounter) : ?>
+                        <span class="font-medium">
+                        <?= $imageCounter ?> Picture<?= $imageCounter > 1 ? 's' : '' ?>
+                        </span>
+                    <?php endif; ?>
+                    <?php if($imageCounter && $videoCounter) : ?>
+                        and
+                    <?php endif; ?>
+                    <?php if($videoCounter) : ?>
+                        <span class="font-medium">
+                            <?= $videoCounter ?> Video<?= $videoCounter > 1 ? 's' : '' ?>
+                        </span>
+                    <?php endif; ?>
+                </div>
+                <?php if(!$button) : ?>
+                <div class="button-header">
+                    <a href="<?= $button['link'] ?>" class="text-cta font-extend tracking-[0.05em] font-bold"><?= $button['title'] ?? 'VIEW ALL' ?></a>
+                </div>
                 <?php endif; ?>
             </div>
         <?php endif; ?>

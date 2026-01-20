@@ -41,7 +41,7 @@ $shouldCheckGalleryFull = get_field('gallery_filter');
         </div>
     <?php endif; ?>
     <div class="inner <?= $mobileFull ? '-container-mobile' : '' ?>">
-        <div class="tabs-button-wrapper flex border-b border-theme-black md:mb-[50px] mb-[20px]">
+        <div class="tabs-button-wrapper flex border-b border-theme-black md:mb-[50px] mb-[30px]">
             <?php foreach($tabs as $i => $tab) : ?>
                 <div class="tabs-button lg:w-[300px] lg:h-[90px] h-[50px] flex items-center justify-center <?= $i ? '' : 'active' ?>" data-index="<?= $i ?>">
                     <?= $tab['title'] ?>

@@ -1,12 +1,12 @@
 .block-spacer {
     width: 100%;
-    height: var(--default-height);
-    height: var(--mobile-height);
+    // height: var(--default-height);
+    height: var(--mobile-height, var(--default-height));
     @media(min-width: 768px) {
-        height: var(--tablet-height);
+        height: var(--tablet-height, var(--default-height));
     }
     @media(min-width: 1024px) {
-        height: var(--desktop-height);
+        height: var(--desktop-height, var(--default-height));
     }
     &.is-preview {
         background-color: rgba(0, 0, 0, 0.1019607843);

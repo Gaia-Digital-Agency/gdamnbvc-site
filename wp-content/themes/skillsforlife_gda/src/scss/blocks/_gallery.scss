@@ -40,4 +40,24 @@
         --swiper-pagination-bullet-horizontal-gap: 5px;
         --swiper-pagination-color: #171719;
     }
+
+    .button-header a {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background: #000;
+            transition: .4s all ease;
+        }
+    
+        &:hover::before {
+            width: 0%;
+            left: 100%;
+        }
+    }
 }

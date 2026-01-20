@@ -31,7 +31,7 @@ $template = [
 ];
 
 
-$elClasses = 'grid grid-cols-12 md:gap-[50px]';
+$elClasses = 'grid grid-cols-12 md:gap-[50px] gap-y-[30px]';
 ?>
 <section class="<?= esc_attr($classes) ?>" id="<?= esc_attr($id) ?>">
     <div class="<?= $is_preview ? '' : $elClasses ?>" data-class="<?= $is_preview ? $elClasses : '' ?>">

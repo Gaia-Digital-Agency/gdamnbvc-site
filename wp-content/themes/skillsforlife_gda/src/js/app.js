@@ -1,12 +1,11 @@
 import { initComponents } from "./bootstrap"
-import { determineNavHeight, initHeaderNav, initMobileMenu, initDonationForm } from "./global"
+import { determineNavHeight, initHeaderNav, initMobileMenu } from "./global"
 import '../scss/app.scss'
 
 document.addEventListener("DOMContentLoaded", () => {
     initComponents()
     initHeaderNav()
     initMobileMenu()
-    initDonationForm()
 })
 
 window.addEventListener('resize', determineNavHeight)

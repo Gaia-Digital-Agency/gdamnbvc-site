@@ -13,7 +13,8 @@ const initTabContent = (component) => {
         // fadeEffect: {
         //     crossFade: true
         // }
-        init: false
+        init: false,
+        spaceBetween: 20
         // init: (_swiper) => {
         //     if(!filter) return
         //     _swiper.activeIndex

@@ -65,12 +65,12 @@ if($background) {
 <section class="<?= esc_attr($classes) ?>" id="<?= esc_attr($id) ?>" style="<?= $backgroundStyle ?>">
     <div class="wrapper container px-0">
         <div class="grid grid-cols-12 items-center">
-            <div class="<?= $sizes[intval($layoutSize)][0] ?> col-span-12 <?= $imageRight ? 'md:order-2' : 'md:order-1' ?>">
+            <div class="<?= $sizes[intval($layoutSize)][0] ?> col-span-12 order-2 <?= $imageRight ? 'md:order-2' : 'md:order-1' ?>">
                 <div class="image-wrapper relative" style="padding-top: <?= $imageSize ?>;">
                     <img src="<?= $image['url'] ?>" class="image-ratio absolute inset-0 w-full h-full object-cover" alt="">
                 </div>
             </div>
-            <div class="<?= $sizes[intval($layoutSize)][1] ?> col-span-12 <?= $imageRight ? 'md:order-1' : 'md:order-2' ?>">
+            <div class="<?= $sizes[intval($layoutSize)][1] ?> col-span-12 order-1 <?= $imageRight ? 'md:order-1' : 'md:order-2' ?>">
                 <div class="inner p-container py-7 md:py-0">
                     <InnerBlocks template="<?= esc_attr(wp_json_encode($template)) ?>" />
                 </div>

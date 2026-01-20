@@ -12,8 +12,10 @@
 @use "./blocks/tab-content";
 @use "./blocks/navigation-stack-slider";
 @use "./blocks/image-text-slider";
+@use "./blocks/image-with-details";
 @use "./blocks/gallery";
 @use "./blocks/spacer";
+@use "./blocks/buttons";
 @use "./blocks/manual-donation";
 @tailwind base;
 @tailwind components;
@@ -36,7 +38,7 @@ header {
 }
 
 
-header {
+header, footer, aside {
     .menu-item {
 
         a {
@@ -63,6 +65,11 @@ header {
             width: 100%;
         }
     }
+}
+
+footer .menu-item a::before {
+    background: #fff;
+    bottom: -6px;
 }
 
 .image-ratio {
