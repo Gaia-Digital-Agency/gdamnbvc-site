@@ -62,7 +62,7 @@ class Xendit_Api_GDA_Activator {
 			reference_id VARCHAR(255),
 			idempotency_id VARCHAR(255),
 			card_id VARCHAR(255),
-			current_status ENUM ( 'inactive' , 'done' , 'pending' ) NOT NULL DEFAULT 'inactive',
+			current_status ENUM ( 'inactive' , 'done' , 'pending' , 'expired' ) NOT NULL DEFAULT 'inactive',
 			created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 			PRIMARY KEY (id)
 		) $charset_collate;";
