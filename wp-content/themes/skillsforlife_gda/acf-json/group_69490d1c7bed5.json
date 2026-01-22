@@ -63,6 +63,28 @@
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_69490d1df8010"
+                },
+                {
+                    "key": "field_6970a30f0cffb",
+                    "label": "Donate Trigger",
+                    "name": "donate_trigger",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "parent_repeater": "field_69490d1df8010"
                 }
             ]
         }
@@ -85,5 +107,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1766395237
+    "modified": 1768989467
 }
