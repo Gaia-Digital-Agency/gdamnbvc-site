@@ -5,6 +5,10 @@
         &.active {
             @apply bg-theme-black text-white;
         }
+        &.disabled {
+            @apply bg-theme-grey text-theme-black border-theme-grey opacity-50;
+            cursor: not-allowed;
+        }
     }
     .choices {
         .choices__item {
@@ -22,6 +26,37 @@
         .choices__list--dropdown, .choices__list[aria-expanded] {
             border-color: #171719;
             z-index: 9;
+        }
+    }
+
+    .error-handler {
+        @apply text-small text-white bg-theme-black px-6 inline-block hidden py-3;
+    }
+
+    .input-form-handler {
+        @apply w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)];
+        padding: 15.5px 16px 15.5px 16px;
+        outline: none;
+        min-height: 44px;
+        @media(max-width: 768px) {
+            padding: 12px 16px 12px 16px;
+        }
+    }
+
+    .date-input {
+        padding: 15.5px 0;
+        outline: none;
+        min-height: 44px;
+        @media(max-width: 768px) {
+            padding: 12px 0;
+        }
+    }
+
+    #iframe-wrapper {
+        height: 100%;
+        iframe {
+            height: 100%;
+            width: 100%;
         }
     }
 }
