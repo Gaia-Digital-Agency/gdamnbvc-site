@@ -43,7 +43,7 @@ $shouldCheckGalleryFull = get_field('gallery_filter');
     <div class="inner <?= $mobileFull ? '-container-mobile' : '' ?>">
         <div class="tabs-button-wrapper flex border-b border-theme-black md:mb-[50px] mb-[30px]">
             <?php foreach($tabs as $i => $tab) : ?>
-                <div class="tabs-button lg:w-[300px] lg:h-[90px] h-[50px] flex items-center justify-center <?= $i ? '' : 'active' ?>" data-index="<?= $i ?>">
+                <div class="tabs-button lg:w-[300px] lg:h-[90px] h-[50px] flex items-center justify-center <?= $i ? '' : 'active' ?>" data-hash="<?= $tab['hash_navigation'] ? $tab['hash_navigation'] : $tab['title'] ?>" data-index="<?= $i ?>">
                     <?= $tab['title'] ?>
                 </div>
             <?php endforeach; ?>
@@ -52,7 +52,7 @@ $shouldCheckGalleryFull = get_field('gallery_filter');
             <div class="swiper">
                 <div class="swiper-wrapper swiper-container">
                     <?php foreach($tabs as $i => $tab) : ?>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide" data-hash="<?= $tab['hash_navigation'] ? $tab['hash_navigation'] : $tab['title'] ?>">
                             <?php 
                                 $content = apply_filters( 'the_content', get_the_content(null, false, $tab['post']) );
                                 echo $content; 
