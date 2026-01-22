@@ -9,12 +9,10 @@ const convertValues = {
 
 const initSpacer = (component) => {
     const main = () => {
-        console.log(component.classList.contains('converted'))
         if(window.innerWidth < BREAKPOINTS.TABLET) {
             if(component.classList.contains('converted')) return
             
             const shouldConvert = parseInt(component.style.height)
-            console.log(shouldConvert)
             if(convertValues[`${shouldConvert}`]) {
                 component.style.height = `${convertValues[`${shouldConvert}`]}px`
                 component.style.setProperty('--original-height', shouldConvert)

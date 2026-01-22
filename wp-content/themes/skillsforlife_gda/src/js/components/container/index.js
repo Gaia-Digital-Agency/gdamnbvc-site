@@ -3,9 +3,7 @@ const initContainer = (component) => {
     const initGap = () => {
         const container = component.querySelector('.grid')
         const gapAmount = component.dataset.gap
-        console.log(gapAmount)
         if(BREAKPOINTS.TABLET < window.innerWidth) {
-            console.log('desktop')
             // container.style.columnGap = gapAmount
             // container.style.rowGap = gapAmount
             container.style.setProperty('column-gap', gapAmount)
@@ -16,7 +14,6 @@ const initContainer = (component) => {
             container.style.setProperty('row-gap', gapAmount)
             container.style.setProperty('column-gap', '0px')
         }
-        console.log(container)
     }
 
     window.addEventListener('resize', initGap)
