@@ -1,0 +1,26 @@
+.block-grid {
+    &.items-center {
+        .grid {
+            align-items: center;
+        }
+    }
+    .grid.twice-columns {
+        grid-template-columns: repeat(24, minmax(0, 1fr));
+        .col-span-12 {
+            grid-column: span 24 / span 24
+        }
+        @media(min-width: 768px) {
+            .md\:col-span-4 {
+                grid-column: span 9 / span 9
+            }
+            .md\:col-span-8 {
+                grid-column: span 15 / span 15
+            }
+        }
+    }
+    .column-target {
+        @media(min-width: 1024px) {
+            height: min-content;
+        }
+    }
+}
