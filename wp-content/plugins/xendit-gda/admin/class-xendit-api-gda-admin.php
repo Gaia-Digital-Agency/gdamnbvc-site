@@ -113,6 +113,8 @@ class Xendit_Api_GDA_Admin {
 		register_setting('xendit_api_gda', 'xendit_api_gda_merchant_id');
 		register_setting('xendit_api_gda', 'xendit_api_gda_server_key');
 		register_setting('xendit_api_gda', 'xendit_api_gda_client_key');
+		register_setting('xendit_api_gda', 'xendit_api_gda_success_url');
+		register_setting('xendit_api_gda', 'xendit_api_gda_failure_url');
 	}
 
 	public function register_admin_menu() {
