@@ -103,12 +103,16 @@ class Xendit_Api_GDA_Public {
 
 	public function embed_head_scripts() {
 		echo '<script id="xendit_public">';
-		echo json_encode(
-			array(
-				'xendit_public' => 'xnd_public_development_L9PqSaNPfi_pgffBjGM2k7nnDoyDBAIXVqZze1fnKoD1DUuJsnB8Tpw6bS06pmJ',
-				'xendit_endpoint' => XENDIT_API_ENDPOINT
-			)
-		);
+		// echo '`';
+		echo "window.xendit_public = '".esc_attr(get_option('xendit_api_gda_client_key'))."';";
+		echo "window.xendit_endpoint = '" . XENDIT_API_ENDPOINT . "'";
+		// echo json_encode(
+		// 	array(
+		// 		'xendit_public' => 'xnd_public_development_L9PqSaNPfi_pgffBjGM2k7nnDoyDBAIXVqZze1fnKoD1DUuJsnB8Tpw6bS06pmJ',
+		// 		'xendit_endpoint' => XENDIT_API_ENDPOINT
+		// 	)
+		// );
+		// echo '`';
 		echo "</script>";
 	}
 
