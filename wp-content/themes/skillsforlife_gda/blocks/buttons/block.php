@@ -38,8 +38,12 @@ $buttonsStyle = [
     
     <div class="buttons-wrapper flex flex-wrap md:gap-7 gap-y-[15px]">
         <?php foreach($buttons as $i => $button) : ?>
-            <div class="button-item" style="flex: 0 0 calc(<?= 100 / count($buttons) ?>% - <?= 1.75 / 2 ?>rem);">
-                <a href="<?= $button['url'] ?>" class="md:py-[38px] py-4 border-[3px] block font-medium text-center w-full border-theme-black text-button transition <?= $buttonsStyle[$i] ?>"><?= $button['text'] ?></a>
+            <div class="button-item cursor-pointer" style="flex: 0 0 calc(<?= 100 / count($buttons) ?>% - <?= 1.75 / 2 ?>rem);">
+                <?php if($button['donate_trigger']) : ?>
+                    <p class="md:py-[38px] py-4 border-[3px] block font-medium text-center w-full border-theme-black text-button transition trigger-donation-form <?= $buttonsStyle[$i] ?>"><?= $button['text'] ?></p>
+                <?php else : ?>
+                    <a href="<?= $button['url'] ?>" class="md:py-[38px] py-4 border-[3px] block font-medium text-center w-full border-theme-black text-button transition <?= $buttonsStyle[$i] ?>"><?= $button['text'] ?></a>
+                <?php endif; ?>
             </div>
         <?php endforeach ?>
     </div>
