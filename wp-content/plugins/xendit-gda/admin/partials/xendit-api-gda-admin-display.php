@@ -24,19 +24,6 @@
 
         <table class="form-table">
             <tr>
-                <th>Xendit Merchant ID</th>
-                <td>
-                    <input type="text"
-                            name="xendit_api_gda_merchant_id"
-                            value="<?= esc_attr(get_option('xendit_api_gda_merchant_id')) ?>"
-                            class="regular-text">
-                </td>
-            </tr>
-        </table>
-        <?php settings_fields('xendit_api_gda'); ?>
-
-        <table class="form-table">
-            <tr>
                 <th>Xendit Server Key</th>
                 <td>
                     <input type="text"
@@ -54,6 +41,30 @@
                     <input type="text"
                             name="xendit_api_gda_client_key"
                             value="<?= esc_attr(get_option('xendit_api_gda_client_key')) ?>"
+                            class="regular-text">
+                </td>
+            </tr>
+        </table>
+        <?php settings_fields('xendit_api_gda') ?>
+        <table class="form-table">
+            <tr>
+                <th>Xendit Redirect Success Url</th>
+                <td>
+                    <input type="text"
+                            name="xendit_api_gda_success_url"
+                            value="<?= esc_attr(get_option('xendit_api_gda_success_url')) ?>"
+                            class="regular-text">
+                </td>
+            </tr>
+        </table>
+        <?php settings_fields('xendit_api_gda') ?>
+        <table class="form-table">
+            <tr>
+                <th>Xendit Redirect Success Url</th>
+                <td>
+                    <input type="text"
+                            name="xendit_api_gda_failure_url"
+                            value="<?= esc_attr(get_option('xendit_api_gda_failure_url')) ?>"
                             class="regular-text">
                 </td>
             </tr>
