@@ -26,12 +26,16 @@ if ( ! empty( $block['align'] ) ) {
 }
 
 // $isContainer = true;
+$twiceCols = get_field('twice_columns');
 $template = [
     ['acf/column'],
 ];
 
 
 $elClasses = 'grid grid-cols-12 md:gap-[50px] gap-y-[30px]';
+if($twiceCols) {
+    $elClasses = $elClasses . ' twice-columns';
+}
 ?>
 <section class="<?= esc_attr($classes) ?>" id="<?= esc_attr($id) ?>">
     <div class="<?= $is_preview ? '' : $elClasses ?>" data-class="<?= $is_preview ? $elClasses : '' ?>">
