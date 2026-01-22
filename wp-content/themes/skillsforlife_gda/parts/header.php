@@ -26,16 +26,16 @@
                     <div class="menu-item">
                         <a href="/get-involved" class="font-extend get-involved-button leading-none text-button-secondary border-[2px] border-theme-black md:p-[20.5px] py-[13px] px-[19px] block font-medium text-[16px] hover:border-theme-grey-3 hover:text-theme-grey-3">Get Involved</a>
                     </div>
-                    <div class="menu-item">
+                    <!-- <div class="menu-item">
                         <p class="font-extend trigger-donation-form get-involved-button leading-none text-button-secondary border-[2px] border-theme-black md:p-[20.5px] py-[13px] px-[19px] block font-medium text-[16px] hover:border-theme-grey-3 hover:text-theme-grey-3">Donation</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<aside id="mobile-menu" class="fixed inset-0 w-full h-full !z-[999999] bg-white nav:hidden block">
+<aside id="mobile-menu" class="fixed inset-0 w-full h-full !z-[999999] bg-white nav:disabled block">
     <div class="container h-full px-[50px] overflow-y-scroll">
         <div class="flex flex-col h-full justify-between">
 
@@ -46,7 +46,7 @@
                 <div class="inner pb-8 mb-[25px] flex items-center justify-between">
                     <div class="logo-wrapper cursor-pointer">
                         <a href="/">
-                            <img src="<?= wp_get_attachment_image_src( get_theme_mod('custom_logo') , 'full' )[0] ?>" width=="100" alt="">
+                            <img src="<?= wp_get_attachment_image_src( get_theme_mod('custom_logo') , 'full' )[0] ?>" width="100" alt="">
                         </a>
                     </div>
                 </div>
