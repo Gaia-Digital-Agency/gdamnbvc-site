@@ -55,9 +55,9 @@ $button = get_field('button');
                         </span>
                     <?php endif; ?>
                 </div>
-                <?php if(!$button) : ?>
+                <?php if($button) : ?>
                 <div class="button-header">
-                    <a href="<?= $button['link'] ?>" class="text-cta font-extend tracking-[0.05em] font-bold"><?= $button['title'] ?? 'VIEW ALL' ?></a>
+                    <a href="<?= $button['url'] ?>" class="text-cta font-extend tracking-[0.05em] font-bold"><?= $button['title'] ?? 'VIEW ALL' ?></a>
                 </div>
                 <?php endif; ?>
             </div>
