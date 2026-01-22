@@ -1,1 +1,0 @@
-import{S as o}from"./app-BbvnDTdV.js";import{E as t}from"./effect-cards-D8lShEo1.js";import"./create-shadow-aL2YOXzk.js";const p=e=>{const r=e.querySelector(".swiper");console.log(r),new o(r,{modules:[t],effect:"cards",grabCursor:!0})};export{p as initStackSlider};

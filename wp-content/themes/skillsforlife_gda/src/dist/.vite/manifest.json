@@ -1,36 +1,48 @@
 {
-  "_create-shadow-aL2YOXzk.js": {
-    "file": "assets/create-shadow-aL2YOXzk.js",
+  "_choices-PN3yYAsG.js": {
+    "file": "assets/choices-PN3yYAsG.js",
+    "name": "choices"
+  },
+  "_create-shadow-BGDXDBXf.js": {
+    "file": "assets/create-shadow-BGDXDBXf.js",
     "name": "create-shadow",
     "imports": [
-      "js/app.js"
+      "_swiper-core-BkdoSGCI.js"
     ]
   },
-  "_effect-cards-D8lShEo1.js": {
-    "file": "assets/effect-cards-D8lShEo1.js",
+  "_effect-cards-DfObVGOc.js": {
+    "file": "assets/effect-cards-DfObVGOc.js",
     "name": "effect-cards",
     "imports": [
-      "_create-shadow-aL2YOXzk.js",
-      "js/app.js"
+      "_create-shadow-BGDXDBXf.js",
+      "_swiper-core-BkdoSGCI.js"
     ]
   },
-  "_navigation-xQ75Zl3a.js": {
-    "file": "assets/navigation-xQ75Zl3a.js",
+  "_glightbox.min-BMzSfRqZ.js": {
+    "file": "assets/glightbox.min-BMzSfRqZ.js",
+    "name": "glightbox.min"
+  },
+  "_navigation-CEbQnk2O.js": {
+    "file": "assets/navigation-CEbQnk2O.js",
     "name": "navigation",
     "imports": [
-      "_pagination-CVdsqFR1.js",
-      "js/app.js"
+      "_pagination-BC4BFXGV.js",
+      "_swiper-core-BkdoSGCI.js"
     ]
   },
-  "_pagination-CVdsqFR1.js": {
-    "file": "assets/pagination-CVdsqFR1.js",
+  "_pagination-BC4BFXGV.js": {
+    "file": "assets/pagination-BC4BFXGV.js",
     "name": "pagination",
     "imports": [
-      "js/app.js"
+      "_swiper-core-BkdoSGCI.js"
     ]
   },
+  "_swiper-core-BkdoSGCI.js": {
+    "file": "assets/swiper-core-BkdoSGCI.js",
+    "name": "swiper-core"
+  },
   "js/app.js": {
-    "file": "assets/app-BbvnDTdV.js",
+    "file": "assets/app-COdneMVz.js",
     "name": "app",
     "src": "js/app.js",
     "isEntry": true,
@@ -41,19 +53,22 @@
       "js/components/navigation-stack-slider/index.js",
       "js/components/image-text-slider/index.js",
       "js/components/gallery/index.js",
+      "js/components/gallery-full/index.js",
       "js/components/contact/index.js",
       "js/components/buttons/index.js",
       "js/components/container/index.js",
       "js/components/indonesia-slider/index.js",
       "js/components/spacer/index.js",
-      "js/components/manual-donation/index.js"
+      "js/components/manual-donation/index.js",
+      "js/components/donation-form/index.js",
+      "js/components/grid/index.js"
     ],
     "css": [
-      "assets/app-CbrZhlhn.css"
+      "assets/app-B1nHrs5B.css"
     ]
   },
   "js/components/buttons/index.js": {
-    "file": "assets/index-CxXW5MnQ.js",
+    "file": "assets/index-CoA8uQGx.js",
     "name": "index",
     "src": "js/components/buttons/index.js",
     "isDynamicEntry": true,
@@ -62,7 +77,7 @@
     ]
   },
   "js/components/company-highlight/index.js": {
-    "file": "assets/index-DVQuc-OJ.js",
+    "file": "assets/index-CMHNAyoq.js",
     "name": "index",
     "src": "js/components/company-highlight/index.js",
     "isDynamicEntry": true,
@@ -77,7 +92,7 @@
     "isDynamicEntry": true
   },
   "js/components/container/index.js": {
-    "file": "assets/index-ByzVxJVr.js",
+    "file": "assets/index-B5LFcpAQ.js",
     "name": "index",
     "src": "js/components/container/index.js",
     "isDynamicEntry": true,
@@ -85,37 +100,67 @@
       "js/app.js"
     ]
   },
+  "js/components/donation-form/index.js": {
+    "file": "assets/index-BtspiTwJ.js",
+    "name": "index",
+    "src": "js/components/donation-form/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "js/app.js",
+      "_swiper-core-BkdoSGCI.js",
+      "_choices-PN3yYAsG.js"
+    ]
+  },
+  "js/components/gallery-full/index.js": {
+    "file": "assets/index-BHMHnFdY.js",
+    "name": "index",
+    "src": "js/components/gallery-full/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_glightbox.min-BMzSfRqZ.js"
+    ]
+  },
   "js/components/gallery/index.js": {
-    "file": "assets/index--9HuBN68.js",
+    "file": "assets/index-Ca70aeq1.js",
     "name": "index",
     "src": "js/components/gallery/index.js",
     "isDynamicEntry": true,
     "imports": [
-      "js/app.js",
-      "_navigation-xQ75Zl3a.js",
-      "_pagination-CVdsqFR1.js"
+      "_swiper-core-BkdoSGCI.js",
+      "_navigation-CEbQnk2O.js",
+      "_pagination-BC4BFXGV.js",
+      "_glightbox.min-BMzSfRqZ.js"
+    ]
+  },
+  "js/components/grid/index.js": {
+    "file": "assets/index-BVnkmFTe.js",
+    "name": "index",
+    "src": "js/components/grid/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "js/app.js"
     ]
   },
   "js/components/image-text-slider/index.js": {
-    "file": "assets/index-DpvmF4pY.js",
+    "file": "assets/index-DU7H1AZn.js",
     "name": "index",
     "src": "js/components/image-text-slider/index.js",
     "isDynamicEntry": true,
     "imports": [
-      "js/app.js",
-      "_navigation-xQ75Zl3a.js",
-      "_pagination-CVdsqFR1.js"
+      "_swiper-core-BkdoSGCI.js",
+      "_navigation-CEbQnk2O.js",
+      "_pagination-BC4BFXGV.js"
     ]
   },
   "js/components/indonesia-slider/index.js": {
-    "file": "assets/index-Dz-RFqlT.js",
+    "file": "assets/index-ZUJWzXdO.js",
     "name": "index",
     "src": "js/components/indonesia-slider/index.js",
     "isDynamicEntry": true,
     "imports": [
-      "js/app.js",
-      "_pagination-CVdsqFR1.js",
-      "_create-shadow-aL2YOXzk.js"
+      "_swiper-core-BkdoSGCI.js",
+      "_pagination-BC4BFXGV.js",
+      "_create-shadow-BGDXDBXf.js"
     ]
   },
   "js/components/manual-donation/index.js": {
@@ -125,18 +170,18 @@
     "isDynamicEntry": true
   },
   "js/components/navigation-stack-slider/index.js": {
-    "file": "assets/index-BVqm0QIo.js",
+    "file": "assets/index-PXTo4oJT.js",
     "name": "index",
     "src": "js/components/navigation-stack-slider/index.js",
     "isDynamicEntry": true,
     "imports": [
-      "js/app.js",
-      "_create-shadow-aL2YOXzk.js",
-      "_effect-cards-D8lShEo1.js"
+      "_swiper-core-BkdoSGCI.js",
+      "_create-shadow-BGDXDBXf.js",
+      "_effect-cards-DfObVGOc.js"
     ]
   },
   "js/components/spacer/index.js": {
-    "file": "assets/index-DsWm6sY2.js",
+    "file": "assets/index-Bs2Vfg2f.js",
     "name": "index",
     "src": "js/components/spacer/index.js",
     "isDynamicEntry": true,
@@ -145,32 +190,34 @@
     ]
   },
   "js/components/stack-slider/index.js": {
-    "file": "assets/index-BU9pblIO.js",
+    "file": "assets/index-BYKd6jZA.js",
     "name": "index",
     "src": "js/components/stack-slider/index.js",
     "isDynamicEntry": true,
     "imports": [
-      "js/app.js",
-      "_effect-cards-D8lShEo1.js",
-      "_create-shadow-aL2YOXzk.js"
+      "_swiper-core-BkdoSGCI.js",
+      "_effect-cards-DfObVGOc.js",
+      "_create-shadow-BGDXDBXf.js"
     ]
   },
   "js/components/tab-content/index.js": {
-    "file": "assets/index-DW86sj7a.js",
+    "file": "assets/index-Cv2xsSm0.js",
     "name": "index",
     "src": "js/components/tab-content/index.js",
     "isDynamicEntry": true,
     "imports": [
+      "_swiper-core-BkdoSGCI.js",
+      "_choices-PN3yYAsG.js",
       "js/app.js"
     ]
   },
   "js/editor.js": {
-    "file": "assets/editor-DYPuz2TF.js",
+    "file": "assets/editor-Mxdhbeue.js",
     "name": "editor",
     "src": "js/editor.js",
     "isEntry": true,
     "css": [
-      "assets/editor-CIpqjb_l.css"
+      "assets/editor-PcO_OVYA.css"
     ]
   }
 }
