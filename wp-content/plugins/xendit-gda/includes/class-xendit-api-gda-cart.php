@@ -98,7 +98,7 @@ class Xendit_Api_GDA_Cart {
                 $to_update['idempotency_id'] = $this->get_idempotency_id();
             }
             if($status) {
-                $to_update['status'] = $status;
+                $to_update['current_status'] = $status;
             }
             if(!count($to_update)) throw new Exception('nothing to update');
             $table_prefix = $wpdb->prefix;
@@ -181,10 +181,10 @@ class Xendit_Api_GDA_Cart {
         $row = $wpdb->get_row(
             $wpdb->prepare(
                 "SELECT * FROM {$wpdb->prefix}gda_cart WHERE cart_id = '%s'",
-                $cart_id
+                $this->get_cart_id()
             )
         );
-        return $row->status;
+        return $row->current_status;
     }
 
     public function set_cart_id($cart_id) {
