@@ -34,6 +34,14 @@ class Xendit_Api_GDA_Rest_Api {
             "methods" => "POST",
             "callback" => [$this, 'card_token_handler']
         ));
+        register_rest_route("xendit-gaia/v1", "/session-complete", array(
+            "methods" => "POST",
+            "callback" => [$this, 'session_complete_handler']
+        ));
+        register_rest_route("xendit-gaia/v1", "/session-expired", array(
+            "methods" => "POST",
+            "callback" => [$this, 'session_expired_handler']
+        ));
     }
 
     public function payment_handler() {
