@@ -3,46 +3,46 @@
     "file": "assets/choices-PN3yYAsG.js",
     "name": "choices"
   },
-  "_create-shadow-BGDXDBXf.js": {
-    "file": "assets/create-shadow-BGDXDBXf.js",
+  "_create-shadow-CviIH7Wl.js": {
+    "file": "assets/create-shadow-CviIH7Wl.js",
     "name": "create-shadow",
     "imports": [
-      "_swiper-core-BkdoSGCI.js"
+      "_swiper-core-BWsPD-mm.js"
     ]
   },
-  "_effect-cards-DfObVGOc.js": {
-    "file": "assets/effect-cards-DfObVGOc.js",
+  "_effect-cards-CA-oWCBK.js": {
+    "file": "assets/effect-cards-CA-oWCBK.js",
     "name": "effect-cards",
     "imports": [
-      "_create-shadow-BGDXDBXf.js",
-      "_swiper-core-BkdoSGCI.js"
+      "_create-shadow-CviIH7Wl.js",
+      "_swiper-core-BWsPD-mm.js"
     ]
   },
   "_glightbox.min-BMzSfRqZ.js": {
     "file": "assets/glightbox.min-BMzSfRqZ.js",
     "name": "glightbox.min"
   },
-  "_navigation-CEbQnk2O.js": {
-    "file": "assets/navigation-CEbQnk2O.js",
+  "_navigation-DgKx27Wi.js": {
+    "file": "assets/navigation-DgKx27Wi.js",
     "name": "navigation",
     "imports": [
-      "_pagination-BC4BFXGV.js",
-      "_swiper-core-BkdoSGCI.js"
+      "_pagination-Dymi9fm7.js",
+      "_swiper-core-BWsPD-mm.js"
     ]
   },
-  "_pagination-BC4BFXGV.js": {
-    "file": "assets/pagination-BC4BFXGV.js",
+  "_pagination-Dymi9fm7.js": {
+    "file": "assets/pagination-Dymi9fm7.js",
     "name": "pagination",
     "imports": [
-      "_swiper-core-BkdoSGCI.js"
+      "_swiper-core-BWsPD-mm.js"
     ]
   },
-  "_swiper-core-BkdoSGCI.js": {
-    "file": "assets/swiper-core-BkdoSGCI.js",
+  "_swiper-core-BWsPD-mm.js": {
+    "file": "assets/swiper-core-BWsPD-mm.js",
     "name": "swiper-core"
   },
   "js/app.js": {
-    "file": "assets/app-COdneMVz.js",
+    "file": "assets/app-CGPgJ7qc.js",
     "name": "app",
     "src": "js/app.js",
     "isEntry": true,
@@ -64,11 +64,11 @@
       "js/components/grid/index.js"
     ],
     "css": [
-      "assets/app-B1nHrs5B.css"
+      "assets/app-qff74m5v.css"
     ]
   },
   "js/components/buttons/index.js": {
-    "file": "assets/index-CoA8uQGx.js",
+    "file": "assets/index-Ce-nSoPU.js",
     "name": "index",
     "src": "js/components/buttons/index.js",
     "isDynamicEntry": true,
@@ -77,7 +77,7 @@
     ]
   },
   "js/components/company-highlight/index.js": {
-    "file": "assets/index-CMHNAyoq.js",
+    "file": "assets/index-DUYrGKvg.js",
     "name": "index",
     "src": "js/components/company-highlight/index.js",
     "isDynamicEntry": true,
@@ -92,7 +92,7 @@
     "isDynamicEntry": true
   },
   "js/components/container/index.js": {
-    "file": "assets/index-B5LFcpAQ.js",
+    "file": "assets/index-PtLcG1nx.js",
     "name": "index",
     "src": "js/components/container/index.js",
     "isDynamicEntry": true,
@@ -101,13 +101,13 @@
     ]
   },
   "js/components/donation-form/index.js": {
-    "file": "assets/index-BtspiTwJ.js",
+    "file": "assets/index-Bkk26h22.js",
     "name": "index",
     "src": "js/components/donation-form/index.js",
     "isDynamicEntry": true,
     "imports": [
       "js/app.js",
-      "_swiper-core-BkdoSGCI.js",
+      "_swiper-core-BWsPD-mm.js",
       "_choices-PN3yYAsG.js"
     ]
   },
@@ -121,19 +121,19 @@
     ]
   },
   "js/components/gallery/index.js": {
-    "file": "assets/index-Ca70aeq1.js",
+    "file": "assets/index-Bf1wolNE.js",
     "name": "index",
     "src": "js/components/gallery/index.js",
     "isDynamicEntry": true,
     "imports": [
-      "_swiper-core-BkdoSGCI.js",
-      "_navigation-CEbQnk2O.js",
-      "_pagination-BC4BFXGV.js",
+      "_swiper-core-BWsPD-mm.js",
+      "_navigation-DgKx27Wi.js",
+      "_pagination-Dymi9fm7.js",
       "_glightbox.min-BMzSfRqZ.js"
     ]
   },
   "js/components/grid/index.js": {
-    "file": "assets/index-BVnkmFTe.js",
+    "file": "assets/index-Cau2T3DP.js",
     "name": "index",
     "src": "js/components/grid/index.js",
     "isDynamicEntry": true,
@@ -142,25 +142,25 @@
     ]
   },
   "js/components/image-text-slider/index.js": {
-    "file": "assets/index-DU7H1AZn.js",
+    "file": "assets/index-DVxKM_au.js",
     "name": "index",
     "src": "js/components/image-text-slider/index.js",
     "isDynamicEntry": true,
     "imports": [
-      "_swiper-core-BkdoSGCI.js",
-      "_navigation-CEbQnk2O.js",
-      "_pagination-BC4BFXGV.js"
+      "_swiper-core-BWsPD-mm.js",
+      "_navigation-DgKx27Wi.js",
+      "_pagination-Dymi9fm7.js"
     ]
   },
   "js/components/indonesia-slider/index.js": {
-    "file": "assets/index-ZUJWzXdO.js",
+    "file": "assets/index-DPjzG4Ty.js",
     "name": "index",
     "src": "js/components/indonesia-slider/index.js",
     "isDynamicEntry": true,
     "imports": [
-      "_swiper-core-BkdoSGCI.js",
-      "_pagination-BC4BFXGV.js",
-      "_create-shadow-BGDXDBXf.js"
+      "_swiper-core-BWsPD-mm.js",
+      "_pagination-Dymi9fm7.js",
+      "_create-shadow-CviIH7Wl.js"
     ]
   },
   "js/components/manual-donation/index.js": {
@@ -170,18 +170,18 @@
     "isDynamicEntry": true
   },
   "js/components/navigation-stack-slider/index.js": {
-    "file": "assets/index-PXTo4oJT.js",
+    "file": "assets/index-BBtmkj5U.js",
     "name": "index",
     "src": "js/components/navigation-stack-slider/index.js",
     "isDynamicEntry": true,
     "imports": [
-      "_swiper-core-BkdoSGCI.js",
-      "_create-shadow-BGDXDBXf.js",
-      "_effect-cards-DfObVGOc.js"
+      "_swiper-core-BWsPD-mm.js",
+      "_create-shadow-CviIH7Wl.js",
+      "_effect-cards-CA-oWCBK.js"
     ]
   },
   "js/components/spacer/index.js": {
-    "file": "assets/index-Bs2Vfg2f.js",
+    "file": "assets/index-DRRafLtf.js",
     "name": "index",
     "src": "js/components/spacer/index.js",
     "isDynamicEntry": true,
@@ -190,34 +190,33 @@
     ]
   },
   "js/components/stack-slider/index.js": {
-    "file": "assets/index-BYKd6jZA.js",
+    "file": "assets/index-qENqoWqz.js",
     "name": "index",
     "src": "js/components/stack-slider/index.js",
     "isDynamicEntry": true,
     "imports": [
-      "_swiper-core-BkdoSGCI.js",
-      "_effect-cards-DfObVGOc.js",
-      "_create-shadow-BGDXDBXf.js"
+      "_swiper-core-BWsPD-mm.js",
+      "_effect-cards-CA-oWCBK.js",
+      "_create-shadow-CviIH7Wl.js"
     ]
   },
   "js/components/tab-content/index.js": {
-    "file": "assets/index-Cv2xsSm0.js",
+    "file": "assets/index-Bi0rP-tn.js",
     "name": "index",
     "src": "js/components/tab-content/index.js",
     "isDynamicEntry": true,
     "imports": [
-      "_swiper-core-BkdoSGCI.js",
-      "_choices-PN3yYAsG.js",
-      "js/app.js"
+      "_swiper-core-BWsPD-mm.js",
+      "_choices-PN3yYAsG.js"
     ]
   },
   "js/editor.js": {
-    "file": "assets/editor-Mxdhbeue.js",
+    "file": "assets/editor-M1SlyAJu.js",
     "name": "editor",
     "src": "js/editor.js",
     "isEntry": true,
     "css": [
-      "assets/editor-PcO_OVYA.css"
+      "assets/editor-CEW26yfC.css"
     ]
   }
 }

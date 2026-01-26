@@ -1,1 +1,0 @@
-import{B as n}from"./app-COdneMVz.js";const i=r=>{const o=()=>{const t=r.querySelector(".grid"),e=r.dataset.gap;n.TABLET<window.innerWidth?(t.style.setProperty("column-gap",e),t.style.setProperty("row-gap",e)):(t.style.setProperty("row-gap",e),t.style.setProperty("column-gap","0px"))};window.addEventListener("resize",o),o()};export{i as initContainer};
