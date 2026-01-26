@@ -29,24 +29,24 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
-	$(document).ready(() => {
-		const grabCart = () => {
-			$.ajax({
-				url: "/wp-admin/admin-ajax.php",
-				data: {
-					action: "gda_req_cart",
-				},
-				method: "POST",
-				success: res => {
-					console.log(res)
-					const json = JSON.parse(res)
-					if(res && json && json['_rp_sc']) {
-						Cookies.set('_rp_sc', json['_rp_sc'])
-					}
-					// Cookies.set('_rp_sc', res)
+	const grabCart = () => {
+		$.ajax({
+			url: "/wp-admin/admin-ajax.php",
+			data: {
+				action: "gda_req_cart",
+			},
+			method: "POST",
+			success: res => {
+				console.log(res)
+				const json = JSON.parse(res)
+				if(res && json && json['_rp_sc']) {
+					Cookies.set('_rp_sc', json['_rp_sc'])
 				}
-			})
-		}
+				// Cookies.set('_rp_sc', res)
+			}
+		})
+	}
+	$(document).ready(() => {
 		if(Cookies.get('_rp_sc')) {
 			$.ajax("/wp-admin/admin-ajax.php", {
 				data: {
@@ -67,79 +67,128 @@
 		grabCart()
 	})
 
-	$(document).ready(() => {
-		const form = document.querySelector('#credit-card-form')
-		Xendit.setPublishableKey('xnd_public_development_L9PqSaNPfi_pgffBjGM2k7nnDoyDBAIXVqZze1fnKoD1DUuJsnB8Tpw6bS06pmJ')
-		console.log(form)
-		form.addEventListener("submit", e => {
-			e.preventDefault()
-			const cardData = {
-				card_number: document.getElementById('card_number').value.replace(/\s/g, ''),
-				expiry_month: '07',
-				expiry_year: '2028',
-				cvn: document.getElementById('cvn').value,
-				cardholder_first_name: document.getElementById('cardholder_first-name').value,
-				cardholder_last_name: document.getElementById('cardholder_last-name').value,
-				cardholder_email: document.getElementById('cardholder_email').value,
-				cardholder_phone_number: document.getElementById('cardholder_phone-number').value,
-				payment_session_id: document.getElementById('session_id').value,
-			};
-			console.log(cardData)
-			Xendit.payment.collectCardData(cardData, (res) => {
-				console.log(res, 'res')
-			});
-			console.log($(form).serialize())
-		})
-	});
+	// $(document).ready(() => {
+	// 	const form = document.querySelector('#credit-card-form')
+	// 	Xendit.setPublishableKey('xnd_public_development_L9PqSaNPfi_pgffBjGM2k7nnDoyDBAIXVqZze1fnKoD1DUuJsnB8Tpw6bS06pmJ')
+	// 	console.log(form)
+	// 	form.addEventListener("submit", e => {
+	// 		e.preventDefault()
+	// 		const cardData = {
+	// 			card_number: document.getElementById('card_number').value.replace(/\s/g, ''),
+	// 			expiry_month: '07',
+	// 			expiry_year: '2028',
+	// 			cvn: document.getElementById('cvn').value,
+	// 			cardholder_first_name: document.getElementById('cardholder_first-name').value,
+	// 			cardholder_last_name: document.getElementById('cardholder_last-name').value,
+	// 			cardholder_email: document.getElementById('cardholder_email').value,
+	// 			cardholder_phone_number: document.getElementById('cardholder_phone-number').value,
+	// 			payment_session_id: document.getElementById('session_id').value,
+	// 		};
+	// 		console.log(cardData)
+	// 		Xendit.payment.collectCardData(cardData, (res) => {
+	// 			console.log(res, 'res')
+	// 		});
+	// 		console.log($(form).serialize())
+	// 	})
+	// });
+
+	// $(document).ready(() => {
+	// 	const fetchData = async (data) => {
+	// 		const headers = new Headers({
+	// 			"Authorization": "Basic " + btoa('xnd_public_development_L9PqSaNPfi_pgffBjGM2k7nnDoyDBAIXVqZze1fnKoD1DUuJsnB8Tpw6bS06pmJ:')
+	// 		})
+	// 		const res = await fetch('https://api.xendit.co/v2/credit_card_tokens', {
+	// 			method: "POST",
+	// 			headers: {
+	// 				Authorization: "Basic " + btoa('xnd_public_development_L9PqSaNPfi_pgffBjGM2k7nnDoyDBAIXVqZze1fnKoD1DUuJsnB8Tpw6bS06pmJ:'),
+	// 				"Content-Type": "application/json;charset=UTF-8"
+	// 			},
+	// 			body: JSON.stringify(data)
+	// 		})
+	// 		return res.json()
+	// 	}
+	// 	const form = document.querySelector('#tokenize-card-form')
+	// 	Xendit.setPublishableKey('xnd_public_development_L9PqSaNPfi_pgffBjGM2k7nnDoyDBAIXVqZze1fnKoD1DUuJsnB8Tpw6bS06pmJ')
+	// 	console.log(form)
+	// 	form.addEventListener("submit", e => {
+	// 		e.preventDefault()
+	// 		const cardData = {
+	// 			is_single_use: true,
+	// 			card_data: {
+	// 				account_number: document.getElementById('tokenize_card_number').value.replace(/\s/g, ''),
+	// 				exp_month: document.getElementById('tokenize_expiration_date_month').value,
+	// 				exp_year: document.getElementById('tokenize_expiration_date_year').value,
+	// 				// account_number: '4000000000001091',
+	// 				// exp_month: '12',
+	// 				// exp_year: '2040',
+	// 				cvn: document.getElementById('tokenize_cvn').value,
+	// 			},
+	// 			amount: "75000",
+	// 			external_id: Cookies.get('_rp_sc'),
+	// 			should_authenticate: true
+	// 			// cardholder_first_name: document.getElementById('tokenize_cardholder_first-name').value,
+	// 			// cardholder_last_name: document.getElementById('tokenize_cardholder_last-name').value,
+	// 			// cardholder_email: document.getElementById('tokenize_cardholder_email').value,
+	// 			// cardholder_phone_number: document.getElementById('tokenize_cardholder_phone-number').value,
+	// 		};
+	// 		console.log(cardData)
+	// 		// Xendit.payment.collectCardData(cardData, (res) => {
+	// 		// 	console.log(res, 'res')
+	// 		// });
+
+	// 		fetchData(cardData)
+
+	// 		console.log($(form).serialize())
+	// 	})
+	// });
+
 
 	$(document).ready(() => {
-		const fetchData = async (data) => {
-			const headers = new Headers({
-				"Authorization": "Basic " + btoa('xnd_public_development_L9PqSaNPfi_pgffBjGM2k7nnDoyDBAIXVqZze1fnKoD1DUuJsnB8Tpw6bS06pmJ:')
-			})
-			const res = await fetch('https://api.xendit.co/v2/credit_card_tokens', {
+		const donationFormEl = document.querySelector('#donation-form form')
+		const submitHandler = async (e) => {
+			if(!Cookies.get('_rp_sc')) grabCart();
+			
+			const inputFirstNameEl = donationFormEl.querySelector('#input-first-name')
+			const inputLastNameEl = donationFormEl.querySelector('#input-last-name')
+			const inputEmailEl = donationFormEl.querySelector('#input-email')
+			const inputMobileNumber = donationFormEl.querySelector('#input-mobile-number')
+			const inputAmountEl = donationFormEl.querySelector('#input-amount')
+
+			// const validation = 
+
+			if(![inputAmountEl, inputFirstNameEl, inputLastNameEl, inputEmailEl, inputMobileNumber].filter(el => {
+				console.log(el, el.value)
+				return el.value
+			}).length) return false;
+
+			let res
+	
+			await jQuery.ajax({
 				method: "POST",
-				headers: {
-					Authorization: "Basic " + btoa('xnd_public_development_L9PqSaNPfi_pgffBjGM2k7nnDoyDBAIXVqZze1fnKoD1DUuJsnB8Tpw6bS06pmJ:'),
-					"Content-Type": "application/json;charset=UTF-8"
+				url: "/wp-admin/admin-ajax.php",
+				data: {
+					action: "gda_create_session",
+					cart_id: Cookies.get('_rp_sc'),
+					first_name: inputFirstNameEl.value,
+					last_name: inputLastNameEl.value,
+					email: inputEmailEl.value,
+					mobile_number: inputMobileNumber.value,
+					amount: inputAmountEl.value,
 				},
-				body: JSON.stringify(data)
+				success: result => {
+					const data = JSON.parse(result)
+					res = data
+				}
 			})
-			return res.json()
+			return res
 		}
-		const form = document.querySelector('#tokenize-card-form')
-		Xendit.setPublishableKey('xnd_public_development_L9PqSaNPfi_pgffBjGM2k7nnDoyDBAIXVqZze1fnKoD1DUuJsnB8Tpw6bS06pmJ')
-		console.log(form)
-		form.addEventListener("submit", e => {
-			e.preventDefault()
-			const cardData = {
-				is_single_use: true,
-				card_data: {
-					account_number: document.getElementById('tokenize_card_number').value.replace(/\s/g, ''),
-					exp_month: document.getElementById('tokenize_expiration_date_month').value,
-					exp_year: document.getElementById('tokenize_expiration_date_year').value,
-					// account_number: '4000000000001091',
-					// exp_month: '12',
-					// exp_year: '2040',
-					cvn: document.getElementById('tokenize_cvn').value,
-				},
-				amount: "75000",
-				external_id: Cookies.get('_rp_sc'),
-				should_authenticate: true
-				// cardholder_first_name: document.getElementById('tokenize_cardholder_first-name').value,
-				// cardholder_last_name: document.getElementById('tokenize_cardholder_last-name').value,
-				// cardholder_email: document.getElementById('tokenize_cardholder_email').value,
-				// cardholder_phone_number: document.getElementById('tokenize_cardholder_phone-number').value,
-			};
-			console.log(cardData)
-			// Xendit.payment.collectCardData(cardData, (res) => {
-			// 	console.log(res, 'res')
-			// });
+		// donationFormEl.addEventListener('submit', (e) => {
+		// 	console.log('submiited')
+		// 	e.preventDefault()
+			
+		// })
 
-			fetchData(cardData)
-
-			console.log($(form).serialize())
-		})
-	});
+		donationFormEl.submitter = submitHandler
+	})
 
 })( jQuery );

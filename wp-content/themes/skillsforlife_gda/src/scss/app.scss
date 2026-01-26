@@ -17,11 +17,15 @@
 @use "./blocks/spacer";
 @use "./blocks/buttons";
 @use "./blocks/manual-donation";
+@use "./blocks/grid";
+@use "./blocks/contact";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
+:root {
+    --plyr-color-main: #171719;
+}
 
 
 .padding-avoid-nav {
@@ -87,4 +91,20 @@ ul {
 
 .swiper .swiper-navigation .swiper-button-disabled {
     display: none;
+}
+
+@media(min-width: 1150px) {
+    .nav\:disabled {
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+.container-overlap-filter {
+    position: relative;
+    margin-top: -45px;
+    @media(min-width: 768px) {
+        margin-top: -50px;
+    }
+    backdrop-filter: blur(60px);
 }

@@ -1,0 +1,104 @@
+
+// /sessions -> POST
+
+{
+ "payment_session_id": "ps-661f87c614802d6c402cd82d",
+ "created": "2021-12-31T23:59:59Z",
+ "updated": "2021-12-31T23:59:59Z",
+ "reference_id": "string",
+ "customer_id": "cust-b98d6f63-d240-44ec-9bd5-aa42954c4f48",
+ "session_type": "SAVE",
+ "allow_save_payment_method": "DISABLED",
+ "currency": "IDR",
+ "amount": 10000,
+ "country": "ID",
+ "mode": "PAYMENT_LINK",
+ "capture_method": "AUTOMATIC",
+ "channel_properties": {},
+ "allowed_payment_channels": [
+  "CARDS",
+  "BRI_DIRECT_DEBIT",
+  "DANA"
+ ],
+ "expires_at": "2021-12-31T23:59:59Z",
+ "locale": "en",
+ "metadata": {
+  "my_custom_id": "merchant-123",
+  "my_custom_order_id": "order-123"
+ },
+ "description": "Payment for your order #123",
+ "items": [
+  {
+   "reference_id": "string",
+   "type": {},
+   "name": "string",
+   "net_unit_amount": 1,
+   "quantity": 1,
+   "url": "string",
+   "image_url": "string",
+   "category": "string",
+   "subcategory": "string",
+   "description": "string",
+   "metadata": {
+    "my_custom_id": "merchant-123",
+    "my_custom_order_id": "order-123"
+   }
+  }
+ ],
+ "success_return_url": "https://yourcompany.com/example_item",
+ "cancel_return_url": "https://yourcompany.com/example_item",
+ "status": "ACTIVE",
+ "payment_link_url": "https://checkout.xendit.co/sessions/ps-661f87c614802d6c402cd82d0 or https://xen.to/kGxPCi60. For test mode, https://checkout-staging.xendit.co/sessions/ps-661f87c614802d6c402cd82d0 or https://dev.xen.to/kGxPCi76",
+ "payment_token_id": "ptkn-cc3938dc-c2a5-43c4-89d7-7570793348c2",
+ "payment_id": "py-ac1fcd3e-21c5-4c70-bb06-fa3c34e19e0c",
+ "payment_request_id": "pr-0800fe40-bb79-47ae-9d1e-e69394d3949c",
+ "business_id": "string"
+},
+
+
+// Payment session complete -> webhooks
+
+{
+    "event": "payment_session.completed",
+    "business_id": "5781d19b2e2385880609791c",
+    "created": "2020-04-20T16:25:52Z",
+    "data": {
+        "id": "ps-579c8d61f23fa4ca35e52da4",
+        "allowed_payment_channels": [
+            "CARD",
+            "OVO",
+            "DANA"
+        ],
+        "amount": 100000,
+        "channel_properties": {
+            "cards": {
+                "bin_whitelist": [
+                    "411100",
+                    "51234567"
+                ],
+                "mid_label": "HALODOC_BNI_5999",
+                "cardonfile_type": "RECURRING"
+            }
+        },
+        "country": "ID",
+        "created": "2020-04-20T16:25:52Z",
+        "currency": "IDR",
+        "customer_id": "cust-e2878b4c-d57e-4a2c-922d-c0313c2800a3",
+        "description": "Example description of your payment session",
+        "expires_at": "2030-02-15T16:23:52Z",
+        "locale": "en",
+        "metadata": {
+            "your_metadata_key": "your_metadata_value"
+        },
+        "mode": "PAYMENT_LINK",
+        "payment_link_url": "https://checkout.xendit.co/latest/65c8b6916b68a555078489a5",
+        "payment_request_id": "pr-8363892-f4d9-421c-dhdy-jdh9e30380",
+        "payment_token_id": "ptkn-6d1c8be4-f4d9-421c-9f0b-ab3b2b6bbc39",
+        "reference_id": "test_session",
+        "success_return_url": "https://www.your-website.co/success_page",
+        "cancel_return_url": "https://www.your-website.co/cancel_page",
+        "session_type": "SAVE",
+        "status": "COMPLETED",
+        "updated": "2020-04-20T16:25:52Z"
+    }
+}

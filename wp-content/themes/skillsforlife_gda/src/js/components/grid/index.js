@@ -6,18 +6,21 @@ const initGridComponent = (component) => {
         const imageTarget = component.querySelector('.image-target')
         const colTarget = component.querySelector('.column-target')
         const spacerTarget = component.querySelector('.spacer-target')
-        
         if(!imageTarget || !colTarget || !spacerTarget) return
+
     
         const imageHeight = imageTarget.getBoundingClientRect().height
         const colHeight = colTarget.getBoundingClientRect().height
+
         
         if(window.innerWidth < BREAKPOINTS.TABLET) {
             spacerTarget.style.height = '30px'
             return
         } 
 
+
         const spacerHeight = imageHeight - colHeight
+        if(spacerHeight < 0) return
         spacerTarget.style.height = `${spacerHeight}px`
     }
     

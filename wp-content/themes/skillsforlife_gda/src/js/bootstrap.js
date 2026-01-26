@@ -12,7 +12,8 @@ const componentsMap = {
     '.block-indonesia-slider': () => import('./components/indonesia-slider'),
     '.wp-block-spacer': () => import('./components/spacer'),
     '.block-manual-donation' : () => import('./components/manual-donation'),
-    '#donation-form': () => import('./components/donation-form')
+    '#donation-form': () => import('./components/donation-form'),
+    '.block-grid': () => import('./components/grid')
 }
 
 const initComponents = async (editor = false) => {

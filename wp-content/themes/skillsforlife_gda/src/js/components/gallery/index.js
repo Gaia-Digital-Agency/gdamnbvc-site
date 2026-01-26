@@ -7,7 +7,6 @@ const initGallery = (component) => {
         selector: '[data-glightbox]',
         draggable: true
     })
-    console.log(lightbox)
     const swiperEl = component.querySelector('.swiper')
     const swiper = new Swiper(swiperEl, {
         slidesPerView: 1,

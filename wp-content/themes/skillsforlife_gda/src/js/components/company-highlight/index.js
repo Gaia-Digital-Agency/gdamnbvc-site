@@ -52,7 +52,6 @@ const initCompanyHighlight = (element, editor = false) => {
                     yPercent: 100,
                     willChange: 'transform'
                 })
-                console.log(dur, del) 
                 tl.to(inner, {
                     yPercent: 0,
                     duration: dur,

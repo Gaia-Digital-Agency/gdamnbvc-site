@@ -86,11 +86,16 @@
 
 
 <div id="donation-overlay" class="fixed inset-0 bg-[rgba(0,0,0,.4)] z-[999999]"></div>
-<div id="donation-form" class="fixed left-0 top-0 bottom-0 z-[999999]" role="dialog" aria-modal="true" hidden>
-    <div class="p-[50px] outer-wrapper wrapper bg-white max-w-3xl h-full relative">
+<div id="donation-form" class="fixed left-0 top-0 bottom-0 right-0 md:right-auto z-[999999]" role="dialog" aria-modal="true" hidden>
+    <div class="md:p-[50px] pt-[100px] pb-[80px] container-mobile outer-wrapper wrapper bg-white max-w-3xl h-full relative overflow-y-scroll">
+        <div class="close-icon absolute top-5 right-5 md:hidden">
+            <div class="inner w-10 h-10 flex justify-center items-center">
+                <img src="<?= assets_url('images/close_icon.svg') ?>" class="w-5 h-5" alt="">
+            </div>
+        </div>
         <form action="#" class="h-full">
             <div class="flex flex-col justify-between h-full">
-                <div class="swiper mx-0">
+                <div class="swiper mx-0 pb-5" style="flex-shrink: 0;">
                     <div class="swiper-wrapper swiper-container">
     
                         <div class="swiper-slide">
@@ -99,7 +104,7 @@
                                     <p class="text-h2 font-medium">Select Donation <span class="font-light">Amount</span></p>
                                 </div>
     
-                                <div class="amount-wrapper grid grid-cols-3 gap-x-[25px] mb-10">
+                                <div class="amount-wrapper grid grid-cols-3 gap-x-[15px] md:gap-x-[25px] mb-10">
                                     <div class="box text-center col-span-1">
                                         <div class="inner py-[25px] border border-theme-black select-state amount-select" tabindex="0" data-amount="100000">
                                             <p class="text-cta font-medium">IDR 100,000</p>
@@ -116,11 +121,15 @@
                                         </div>
                                     </div>
                                 </div>
-    
-                                <div class="input-manual-wrapper border border-theme-black flex items-center pl-[30px] mb-[50px]">
-                                    <div class="prefix mr-3 text-cta">IDR</div>
-                                    <div class="wrapper w-full">
-                                        <input type="text" class="w-full py-2 text-cta" id="manual-input" placeholder="Or enter your amount" name="manual-amount">
+                                <div class="wrapper mb-[50px]">
+                                    <div class="input-manual-wrapper border border-theme-black flex items-center pl-[30px]">
+                                        <div class="prefix mr-3 text-cta">IDR</div>
+                                        <div class="wrapper w-full">
+                                            <input type="text" class="w-full md:py-2 py-4 text-cta" id="manual-input" placeholder="Or enter your amount" name="manual-amount">
+                                        </div>
+                                    </div>
+                                    <div id="error-amount" class="error-handler mt-1">
+                                        Please put amount with minimum value 10000
                                     </div>
                                 </div>
     
@@ -130,19 +139,19 @@
                                     <div class="title-wrapper mb-10">
                                         <p class="text-h3 font-medium">Donation <span class="font-light">Period</span></p>
                                     </div>
-                                    <div class="period grid grid-cols-3 gap-x-[25px]">
+                                    <div class="period grid grid-cols-3 gap-x-[15px] md:gap-x-[25px]">
                                         <div class="box col-span-1">
-                                            <div class="inner py-3 border border-theme-black period-select select-state active" data-period="once">
+                                            <div class="inner py-3 py-4 border border-theme-black period-select select-state active" data-period="once">
                                                 <p class="text-cta font-medium">Once</p>
                                             </div>
                                         </div>
                                         <div class="box col-span-1">
-                                            <div class="inner py-3 border border-theme-black select-state period-select" data-period="monthly">
+                                            <div class="inner py-3 py-4 border border-theme-black select-state period-select disabled" data-period="monthly">
                                                 <p class="text-cta font-medium">Monthly</p>
                                             </div>
                                         </div>
                                         <div class="box col-span-1">
-                                            <div class="inner py-3 border border-theme-black select-state period-select" data-period="yearly">
+                                            <div class="inner py-3 py-4 border border-theme-black select-state period-select disabled" data-period="yearly">
                                                 <p class="text-cta font-medium">Yearly</p>
                                             </div>
                                         </div>
@@ -158,7 +167,7 @@
                         <div class="swiper-slide">
                             <div class="form-wrapper">
     
-                                <div class="type-wrapper grid grid-cols-2 gap-x-[50px] mt-[50px] mb-16">
+                                <div class="type-wrapper grid grid-cols-2 gap-x-[15px] md:gap-x-[50px] md:mt-[50px] md:mb-16 mb-[30px]">
                                     <div class="box text-center col-span-1">
                                         <div class="inner py-4 border border-theme-black select-state type-select active" data-type="individual">
                                             <p class="text-cta font-medium">As Individual</p>
@@ -174,8 +183,8 @@
                                 <input type="hidden" id="input-type" name="type" class="mandatory" value="individual">
     
                                 <div class="information-wrapper">
-                                    <div class="grid grid-cols-12 gap-[50px]">
-                                        <div class="input-wrapper md:col-span-6 col-span-12">
+                                    <div class="grid grid-cols-12 gap-x-[15px] gap-y-[15px] md:gap-[50px]">
+                                        <div class="input-wrapper col-span-6">
                                             <label class="mb-[10px] block" for="#">Title</label>
                                             <select name="title" class="w-full" disabled id="input-title">
                                                 <option value="mr">Mr</option>
@@ -184,32 +193,57 @@
                                                 <option value="ms">Ms</option>
                                             </select>
                                         </div>
-                                        <div class="input-wrapper md:col-span-6 col-span-12 organization-wrapper">
-                                            <label class="mb-[10px] block" for="#">Organization Name</label>
-                                            <input disabled type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
+                                        <div class="input-wrapper col-span-6 organization-wrapper">
+                                            <div class="flex mb-[10px] items-center justify-between">
+                                                <label class="block" for="#">Organization Name</label>
+                                                <div id="error-organization" class="error-handler">
+                                                    This is a required field
+                                                </div>
+                                            </div>
+                                            <input disabled type="text" class="input-form-handler" style="">
                                         </div>
-                                        <div class="input-wrapper md:col-span-6 col-span-12">
-                                            <label class="mb-[10px] block" for="#">First Name</label>
-                                            <input disabled type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
+                                        <div class="input-wrapper col-span-6">
+                                            <div class="flex mb-[10px] items-center justify-between">
+                                                <label class="block" for="#">First Name</label>
+                                                <div id="error-first-name" class="error-handler">
+                                                    This is a required field
+                                                </div>
+                                            </div>
+                                            <input disabled name="first-name" type="text" id="input-first-name" class="input-form-handler mandatory" style="">
                                         </div>
-                                        <div class="input-wrapper md:col-span-6 col-span-12">
-                                            <label class="mb-[10px] block" for="#">Last Name</label>
-                                            <input disabled type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
+                                        <div class="input-wrapper col-span-6">
+                                            <div class="flex mb-[10px] items-center justify-between">
+                                                <label class="block" for="#">Last Name</label>
+                                                <div id="error-last-name" class="error-handler">
+                                                    This is a required field
+                                                </div>
+                                            </div>
+                                            <input disabled type="text" id="input-last-name" name="last-name" class="input-form-handler mandatory" style="">
                                         </div>
-                                        <div class="input-wrapper md:col-span-6 col-span-12">
-                                            <label class="mb-[10px] block" for="#">Email</label>
-                                            <input disabled type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
+                                        <div class="input-wrapper col-span-6">
+                                            <div class="flex mb-[10px] items-center justify-between">
+                                                <label class="block" for="#">Email</label>
+                                                <div id="error-email" class="error-handler">
+                                                    This is a required field
+                                                </div>
+                                            </div>
+                                            <input disabled type="text" id="input-email" name="email" class="input-form-handler mandatory" style="">
                                         </div>
-                                        <div class="input-wrapper md:col-span-6 col-span-12">
-                                            <label class="mb-[10px] block" for="#">Phone</label>
-                                            <input disabled type="text" class="w-full focus:outline-0 border border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" style="padding: 15.5px 16px 15.5px 16px; outline: none; min-height: 44px;">
+                                        <div class="input-wrapper col-span-6">
+                                            <div class="flex mb-[10px] items-center justify-between">
+                                                <label class="block" for="#">Phone</label>
+                                                <div id="error-mobile-number" class="error-handler">
+                                                    This is a required field
+                                                </div>
+                                            </div>
+                                            <input disabled type="text" id="input-mobile-number" name="mobile-number" class="input-form-handler mandatory" style="">
                                         </div>
-                                        <div class="input-wrapper md:col-span-6 col-span-12">
+                                        <div class="input-wrapper col-span-6">
                                             <label class="mb-[10px] block" for="#">Date of Birth</label>
-                                            <div class="flex gap-x-[25px]">
-                                                <input disabled type="number" min="1" max="31" class="w-full focus:outline-0 border text-center border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" placeholder="DD" style="padding: 15.5px 0; outline: none; min-height: 44px;">
-                                                <input disabled type="number" min="1" max="12" class="w-full focus:outline-0 border text-center border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" placeholder="MM" style="padding: 15.5px 0; outline: none; min-height: 44px;">
-                                                <input disabled type="number" min="1" class="w-2/5 focus:outline-0 border text-center border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" placeholder="YYYY" style="padding: 15.5px 0; outline: none; min-height: 44px; flex-shrink: 0;">
+                                            <div class="flex gap-x-[7.5px] md:gap-x-[25px]">
+                                                <input disabled type="number" min="1" max="31" class="date-input w-full focus:outline-0 border text-center border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" placeholder="DD" style="">
+                                                <input disabled type="number" min="1" max="12" class="date-input w-full focus:outline-0 border text-center border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" placeholder="MM" style="">
+                                                <input disabled type="number" min="1" class="date-input w-2/5 focus:outline-0 border text-center border-[rgba(23,23,25,.3)] focus:border-[rgba(23,23,25,1)]" placeholder="YYYY" style="flex-shrink: 0;">
                                             </div>
                                         </div>
                                     </div>
@@ -217,6 +251,13 @@
     
                                 <input type="hidden" id="input-period" name="period" value="once">
     
+                            </div>
+                        </div>
+
+
+                        <div class="swiper-slide">
+                            <div id="iframe-wrapper">
+
                             </div>
                         </div>
     

@@ -70,7 +70,7 @@ if($background) {
                     <img src="<?= $image['url'] ?>" class="image-ratio absolute inset-0 w-full h-full object-cover" alt="">
                 </div>
             </div>
-            <div class="<?= $sizes[intval($layoutSize)][1] ?> col-span-12 order-1 <?= $imageRight ? 'md:order-1' : 'md:order-2' ?>">
+            <div class="<?= $sizes[intval($layoutSize)][1] ?> col-span-12 order-1 <?= $imageRight ? 'md:order-1' : 'md:order-2' ?>">    
                 <div class="inner p-container py-7 md:py-0">
                     <InnerBlocks template="<?= esc_attr(wp_json_encode($template)) ?>" />
                 </div>

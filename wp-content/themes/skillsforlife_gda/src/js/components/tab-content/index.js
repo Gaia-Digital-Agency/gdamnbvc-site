@@ -1,6 +1,7 @@
 import Swiper from "swiper"
-// import { EffectFade } from "swiper/modules"
+import { HashNavigation } from "swiper/modules"
 import Choices from "choices.js"
+import gsap from "gsap"
 const initTabContent = (component) => {
 
     const filter = component.querySelector('.filter-wrapper')
@@ -8,21 +9,65 @@ const initTabContent = (component) => {
     const swiper = new Swiper(swiperEl, {
         slidesPerView: 1,
         allowTouchMove: false,
+        modules: [HashNavigation],
+        hashNavigation: true,
         // modules: [EffectFade],
         // effect: "fade",
         // fadeEffect: {
         //     crossFade: true
         // }
         init: false,
-        spaceBetween: 20
+        spaceBetween: 20,
+        autoHeight: true,
+        observer: true,
+        // observeParents: true,
+        observeSlideChildren: true
         // init: (_swiper) => {
         //     if(!filter) return
         //     _swiper.activeIndex
-        //     console.log(_swiper)
         // }
     })
 
+    const buttons = component.querySelectorAll('.tabs-button-wrapper .tabs-button')
+
+    const resetButtons = () => {
+        buttons.forEach(button => {
+            button.classList.remove('active')
+        })
+    }
+
+    const swiperIniting = (_swiper) => {
+        [
+            initFilter, 
+            initHeightFix,
+            initHashing
+        ].forEach(cb => cb(_swiper))
+    }
+
+    const initHashing = () => {
+        const selectedTabs = component.querySelector(`.tabs-button-wrapper [data-hash="${window.location.hash.replace('#', '')}"]`)
+        if(selectedTabs) {
+            resetButtons()
+            selectedTabs.classList.add('active')
+            // console.log()
+            window.addEventListener('load', () => {
+                window.scrollTo(0, Math.max((selectedTabs.getBoundingClientRect().top), 0))
+            })
+        }
+    }
+
+    const initHeightFix = () => {
+        const main = () => {
+            swiper.wrapperEl.style.height = 'auto'
+        }
+
+        window.addEventListener('resize', main)
+        window.addEventListener('load', main)
+        main()
+    }
+
     const initFilter = (_swiper) => {
+
         if(!filter) return
         const currSlide = _swiper.slides[_swiper.activeIndex]
         const galleryFull = currSlide.querySelector('.block-gallery-full')
@@ -72,15 +117,8 @@ const initTabContent = (component) => {
         })
     }
 
-    swiper.on('init', initFilter)
+    swiper.on('init', swiperIniting)
     swiper.init()
-    const buttons = component.querySelectorAll('.tabs-button-wrapper .tabs-button')
-
-    const resetButtons = () => {
-        buttons.forEach(button => {
-            button.classList.remove('active')
-        })
-    }
 
     buttons.forEach(button => {
         const index = parseInt(button.dataset.index)
@@ -93,7 +131,6 @@ const initTabContent = (component) => {
     })
 
     swiper.on('slideChange', initFilter)
-
 
 }
 

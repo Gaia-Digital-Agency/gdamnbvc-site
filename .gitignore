@@ -21,6 +21,9 @@ wp-content/upgrade/
 wp-content/litespeed/
 img/
 
+# themes after build
+src/dist
+
 # others
 
 error_log
@@ -31,3 +34,4 @@ wp-config.php
 node_modules/
 *.zip
 *.tar.gz
+hot

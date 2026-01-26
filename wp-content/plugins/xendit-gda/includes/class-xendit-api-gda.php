@@ -214,6 +214,9 @@ class Xendit_Api_GDA {
 
 		$this->loader->add_action('wp_ajax_nopriv_gda_ver_cart', $plugin_ajax, 'verify_cart');
 		$this->loader->add_action('wp_ajax_gda_ver_cart', $plugin_ajax, 'verify_cart');
+
+		$this->loader->add_action('wp_ajax_nopriv_gda_create_session', $plugin_ajax, 'create_session');
+		$this->loader->add_action('wp_ajax_gda_create_session', $plugin_ajax, 'create_session');
 	}
 
 	/**

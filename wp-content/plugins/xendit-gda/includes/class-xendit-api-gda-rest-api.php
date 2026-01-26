@@ -77,6 +77,56 @@ class Xendit_Api_GDA_Rest_Api {
         return $this->error_handler();
     }
 
+    public function session_expired_handler(WP_REST_REQUEST $request) {
+        try {
+            $cart = new Xendit_Api_GDA_Cart();
+            $parameters = $request->get_json_params();
+            $data = $parameters['data'];
+
+            $cart->set_cart_id($data['reference_id']);
+            $cart->update_to_db('expired');
+            $cart->set_cart_meta(array(
+                'status' => $data['status']
+            ));
+
+            return new WP_REST_RESPONSE(
+                array(
+                    'status' => true,
+                ),
+                200
+            );
+        } catch (Exception $e) {
+            return $this->error_handler();
+        }
+    }
+
+    public function session_complete_handler(WP_REST_REQUEST $request) {
+        try {
+            $cart = new Xendit_Api_GDA_Cart();
+            $parameters = $request->get_json_params();
+            $data = $parameters['data'];
+            
+            $cart->set_cart_id($data['reference_id']);
+            $cart->update_to_db('done');
+            $cart->set_cart_meta(array(
+                'customer_id' => $data['customer_id'],
+                'status' => $data['status'],
+                'token_id' => $data['payment_token_id']
+            ));
+    
+            return new WP_REST_RESPONSE(
+                array(
+                    'success' => true
+                ),
+                200
+            );
+        } catch (Exception $e) {
+            return $this->error_handler();
+        }
+
+    }
+
+
     private function error_handler($message = 'unexpected error occured', $status_code = 500) {
         return new WP_REST_Response(
             array(

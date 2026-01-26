@@ -1,0 +1,13 @@
+.block-contact {
+    .contact-form {
+        .form-input-wrapper {
+            @apply w-full text-theme-black;
+        }
+        .submit-button {
+            @apply md:py-[38px] md:w-[600px] py-4 font-extend font-medium text-cta bg-theme-black text-white text-center;
+        }
+        .wpcf7-response-output {
+            @apply md:w-[600px];
+        }
+    }
+}

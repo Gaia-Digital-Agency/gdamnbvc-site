@@ -59,6 +59,7 @@ export default defineConfig(({ mode }) => ({
     // root: process.cwd(),
     root: path.resolve(__dirname, 'src'),
     publicDir: true,
+    base: './',
 
     build: {
         outDir: 'dist',

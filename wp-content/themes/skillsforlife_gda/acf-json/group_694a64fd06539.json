@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "block",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -72,6 +72,28 @@
                     "bidirectional": 0,
                     "ui": 1,
                     "bidirectional_target": [],
+                    "parent_repeater": "field_694a64feadf3a"
+                },
+                {
+                    "key": "field_6971d053b05cb",
+                    "label": "Hash Navigation",
+                    "name": "hash_navigation",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
                     "parent_repeater": "field_694a64feadf3a"
                 }
             ]
@@ -137,5 +159,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1768187689
+    "modified": 1769066626
 }

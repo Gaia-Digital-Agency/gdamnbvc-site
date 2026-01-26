@@ -88,6 +88,8 @@ $button = get_field('button');
                         <?php if($media['type'] == 'video') : ?>
                             <div class="col-span-12 md:col-span-6">
                                 <div class="image-wrapper relative pt-[74%]">
+                                    <div class="overlay bg-theme-black opacity-50 absolute inset-0 w-full h-full z-[1]" style="pointer-events: none;"></div>
+                                    <img src="<?= assets_url('images/play_icon.svg') ?>" class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-[1]" style="pointer-events: none;" alt="">
                                     <a href="<?= parse_url($media['url'], PHP_URL_PATH) ?>" class="block absolute inset-0 w-full h-full glightbox-<?= $block['id'] . 'video' ?>" data-glightbox data-gallery="gallery-<?= str_replace('block_', '', $block['id'] . 'video') ?>">
                                         <video src="<?= $media['url'] ?>" class="image-ratio glightbox-<?= $block['id'] . 'video' ?>" alt="">
                                     </a>
