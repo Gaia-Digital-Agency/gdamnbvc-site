@@ -90,7 +90,7 @@ class Xendit_Api_GDA_Cart {
         try {
             global $wpdb;
             $to_update = [];
-            if($this->get_cart_id()) throw new Exception('need to set cart id');
+            if(!$this->get_cart_id()) throw new Exception('need to set cart id');
             if($this->get_reference_id()) {
                 $to_update['reference_id'] = $this->get_reference_id();
             }

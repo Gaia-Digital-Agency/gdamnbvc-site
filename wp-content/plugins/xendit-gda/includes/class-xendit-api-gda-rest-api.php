@@ -113,7 +113,6 @@ class Xendit_Api_GDA_Rest_Api {
             $cart = new Xendit_Api_GDA_Cart();
             $parameters = $request->get_json_params();
             $data = $parameters['data'];
-            var_dump($data);
             
             $cart->set_cart_id($data['reference_id']);
             $cart->update_to_db('done');
