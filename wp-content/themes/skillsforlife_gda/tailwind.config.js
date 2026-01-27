@@ -101,7 +101,8 @@ const containerStyles = ({ addComponents }) => {
       './src/js/**/*.js',
       './template-parts/*.php',
       './includes/tinymce.php',
-      './dump.html'
+      './dump.html',
+      './page-*.php'
       // './src/js/*.js',
     ],
     safelist: [

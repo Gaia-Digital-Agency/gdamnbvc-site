@@ -13,7 +13,8 @@ const componentsMap = {
     '.wp-block-spacer': () => import('./components/spacer'),
     '.block-manual-donation' : () => import('./components/manual-donation'),
     '#donation-form': () => import('./components/donation-form'),
-    '.block-grid': () => import('./components/grid')
+    '.block-grid': () => import('./components/grid'),
+    '#thank-you': () => import('./components/thank-you')
 }
 
 const initComponents = async (editor = false) => {

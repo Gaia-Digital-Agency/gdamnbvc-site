@@ -109,8 +109,8 @@ class Xendit_Api_GDA_Ajax {
         ];
 
         // if(get_option('xendit_api_gda_success_url')) {
-        //     // $json_data['success_return_url'] = get_option('xendit_api_gda_success_url');
-            $json_data['success_return_url'] = 'https://6mnbvc.gaiada.com/gallery';
+            $json_data['success_return_url'] = get_option('xendit_api_gda_success_url');
+            // $json_data['success_return_url'] = 'https://6mnbvc.gaiada.com/gallery';
         // }
 
         $response = $client->post(XENDIT_API_ENDPOINT . "/sessions", [
