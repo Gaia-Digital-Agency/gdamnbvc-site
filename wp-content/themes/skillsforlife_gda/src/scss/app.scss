@@ -11,6 +11,7 @@
 @use "./blocks/indonesia-slider";
 @use "./blocks/tab-content";
 @use "./blocks/navigation-stack-slider";
+@use "./blocks/more-stack-slider";
 @use "./blocks/image-text-slider";
 @use "./blocks/image-with-details";
 @use "./blocks/gallery";
@@ -67,6 +68,20 @@ header, footer, aside {
         &:hover a::before, &.active a::before {
             right: 0;
             width: 100%;
+        }
+    }
+}
+
+header {
+    .menu-item {
+        a {
+            display: flex;
+            align-items: center;
+            height: 40px;
+
+            &::before {
+                bottom: 0;
+            }
         }
     }
 }
