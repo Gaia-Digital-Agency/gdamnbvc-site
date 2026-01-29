@@ -23,6 +23,7 @@ const initDonationForm = (component) => {
     const swiper = new Swiper(swiperEl, {
         slidesPerView: 1,
         allowTouchMove: false,
+        autoHeight: true,
     })
 
     gsap.set(formComponent, {
@@ -273,6 +274,17 @@ const initAmountForm = (formComponent) => {
     }
     const input = formComponent.querySelector('#input-amount')
     const manualInput = formComponent.querySelector('#manual-input')
+    const manualInputHandler = () => {
+        const raw = manualInput.value.replace(/\D/g, '')
+        if (!raw) {
+            manualInput.value = ''
+            return
+        }
+
+        manualInput.value = raw.replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+    }
+
+    manualInput.addEventListener('input', manualInputHandler)
     const changeHandler = (selection) => {
         console.log(selection.classList.contains('disabled'))
         if(selection.classList.contains('disabled')) return;
@@ -280,6 +292,7 @@ const initAmountForm = (formComponent) => {
         selection.classList.add('active')
         input.value = selection.dataset.amount
         manualInput.value=selection.dataset.amount
+        manualInputHandler()
     }
     selections.forEach(selection => {
         selection.addEventListener("click", () => {
@@ -291,7 +304,7 @@ const initAmountForm = (formComponent) => {
     })
     manualInput.addEventListener('change', () => {
         resetActive()
-        input.value = manualInput.value 
+        input.value = manualInput.value.replace(/\./g, '')
         manualInput.value = (manualInput.value).toLocaleString('id-ID')
     })
 }
