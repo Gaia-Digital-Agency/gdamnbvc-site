@@ -1,0 +1,22 @@
+.block-more-stack-slider {
+    .navigation-next p {
+        position: relative;
+        display: inline-block;
+        &::before {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 2px;
+                background: #000;
+                transition: .4s all ease;
+            }
+    
+            &:hover::before {
+                width: 0%;
+                left: 100%;
+            }
+    }
+}
