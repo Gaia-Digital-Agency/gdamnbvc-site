@@ -19,7 +19,7 @@ const initMoreStackSlider = (component, editor = false) => {
         effect: 'fade',
         fadeEffect: {
             crossFade: true
-        }
+        },
     })
 
     imageSwiper.on('slideChange', swiper => {
@@ -30,7 +30,11 @@ const initMoreStackSlider = (component, editor = false) => {
 
     const nav = component.querySelector('.navigation-next')
     nav.addEventListener('click', () => {
-        imageSwiper.slideNext()
+        if((imageSwiper.activeIndex + 1) >= imageSwiper.slides.length) {
+            imageSwiper.slideTo(0)
+        } else {
+            imageSwiper.slideNext()
+        }
         // textSwiper.slideTo(index)
     })
 
