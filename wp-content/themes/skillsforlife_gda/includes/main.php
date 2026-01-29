@@ -222,3 +222,17 @@ add_action('acf/init', function () {
         ));
     }
 });
+
+// Disable jquery migrate logs
+add_action('wp_default_scripts', function ($scripts) {
+    if (is_admin()) {
+        return;
+    }
+
+    if (isset($scripts->registered['jquery'])) {
+        $scripts->registered['jquery']->deps = array_diff(
+            $scripts->registered['jquery']->deps,
+            ['jquery-migrate']
+        );
+    }
+});
