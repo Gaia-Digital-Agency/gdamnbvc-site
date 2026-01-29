@@ -34,13 +34,28 @@ $icons = get_field('icons');
         <div class="icons-wrapper mb-[10px]">
             <div class="icon-items flex items-center">
                 <div class="icon-wrapper mr-[15px]">
-                    <img src="<?= $icon['image']['url'] ?>" width="20" height="20" alt="">
-                </div>
-                <div class="text">
-                    <?php if($icon['text']) : ?>
-                    <a href="<?= $icon['text']['url'] ? $icon['text']['url'] : '' ?>" target="<?= $icon['text']['target'] ? $icon['text']['target'] : '_self' ?>" class="text-caption"><?= $icon['text']['title'] ? $icon['text']['title'] : '' ?></a>
+                    <?php if($icon['text']['url'] && $icon['text']['url'] != '#') : ?>
+                    <a href="<?= $icon['text']['url'] ?>">
+                    <?php endif; ?>
+
+                        <img src="<?= $icon['image']['url'] ?>" width="20" height="20" alt="">
+                    <?php if($icon['text']['url'] && $icon['text']['url'] != '#') : ?>
+                    </a>
                     <?php endif; ?>
                 </div>
+                <!-- <div class="text"> -->
+                    <?php if($icon['text']) : ?>
+                        <?php if($icon['text']['url'] && $icon['text']['url'] != '#') : ?>
+                            <a href="<?= $icon['text']['url'] ? $icon['text']['url'] : '' ?>" target="<?= $icon['text']['target'] ? $icon['text']['target'] : '_self' ?>">
+                        <?php endif; ?>
+                            <span class="text-caption">
+                            <?= $icon['text']['title'] ? $icon['text']['title'] : '' ?>
+                            </span>
+                        <?php if($icon['text']['url'] && $icon['text']['url'] != '#') : ?>
+                            </a>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                <!-- </div> -->
             </div>
         </div>
 
