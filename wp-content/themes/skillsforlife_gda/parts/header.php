@@ -23,7 +23,7 @@
                         <a href="<?= $menu['url'] ?>" class="font-extend leading-none text-menu-header font-light"><?= $menu['title'] ?></a>
                     </div>
                     <?php endforeach; ?>
-                    <div class="menu-item">
+                    <div class="">
                         <a href="/get-involved" class="font-extend get-involved-button leading-none text-button-secondary border-[2px] border-theme-black md:p-[20.5px] py-[13px] px-[19px] block font-medium text-[16px] hover:border-theme-grey-3 hover:text-theme-grey-3">Get Involved</a>
                     </div>
                     <!-- <div class="menu-item">
