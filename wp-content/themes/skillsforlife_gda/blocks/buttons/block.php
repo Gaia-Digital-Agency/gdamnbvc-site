@@ -29,7 +29,7 @@ $buttons = get_field('buttons');
 
 $buttonsStyle = [
     "bg-theme-black text-white hover:bg-theme-grey-3 hover:border-theme-grey-3 hover:text-white hover:text-theme-black",
-    "bg-transparent text-theme-black hover:bg-theme-grey-5 hover:border-theme-grey-5",
+    "bg-transparent text-theme-black hover:text-theme-grey-3 hover:border-theme-grey-3",
 ]
 
 ?>
