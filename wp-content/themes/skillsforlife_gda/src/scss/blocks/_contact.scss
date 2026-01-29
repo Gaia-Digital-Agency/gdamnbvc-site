@@ -12,10 +12,10 @@
             //     @apply ;
             // }
             .form-input-wrapper {
-                @apply w-full py-[10px] text-theme-black mb-5 px-[30px] border border-theme-black flex items-center placeholder:text-[rgba(23,23,25,.3)] outline-none;
+                @apply w-full py-[10px] text-theme-black px-[30px] border border-theme-black flex items-center placeholder:text-[rgba(23,23,25,.3)] outline-none;
             }
             .wpcf7-form-control-wrap {
-                @apply flex flex-col-reverse;
+                @apply flex flex-col mb-5;
             }
         }
         .wpcf7-response-output {
