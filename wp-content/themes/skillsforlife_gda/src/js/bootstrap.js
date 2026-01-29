@@ -3,6 +3,7 @@ const componentsMap = {
     '.block-company-highlight': () => import('./components/company-highlight'),
     '.block-tab-content': () => import('./components/tab-content'),
     '.block-navigation-stack-slider': () => import('./components/navigation-stack-slider'),
+    '.block-more-stack-slider': () => import('./components/more-stack-slider'),
     '.block-image-text-slider': () => import('./components/image-text-slider'),
     '.block-gallery': () => import('./components/gallery'),
     '.block-gallery-full': () => import('./components/gallery-full'),
