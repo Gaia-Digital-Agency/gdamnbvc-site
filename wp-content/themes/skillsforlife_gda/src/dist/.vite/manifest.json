@@ -18,6 +18,14 @@
       "_swiper-core-BWsPD-mm.js"
     ]
   },
+  "_effect-fade-CIf3dgef.js": {
+    "file": "assets/effect-fade-CIf3dgef.js",
+    "name": "effect-fade",
+    "imports": [
+      "_create-shadow-CviIH7Wl.js",
+      "_swiper-core-BWsPD-mm.js"
+    ]
+  },
   "_glightbox.min-BMzSfRqZ.js": {
     "file": "assets/glightbox.min-BMzSfRqZ.js",
     "name": "glightbox.min"
@@ -42,7 +50,7 @@
     "name": "swiper-core"
   },
   "js/app.js": {
-    "file": "assets/app-CGPgJ7qc.js",
+    "file": "assets/app-26RR1fin.js",
     "name": "app",
     "src": "js/app.js",
     "isEntry": true,
@@ -51,6 +59,7 @@
       "js/components/company-highlight/index.js",
       "js/components/tab-content/index.js",
       "js/components/navigation-stack-slider/index.js",
+      "js/components/more-stack-slider/index.js",
       "js/components/image-text-slider/index.js",
       "js/components/gallery/index.js",
       "js/components/gallery-full/index.js",
@@ -61,14 +70,15 @@
       "js/components/spacer/index.js",
       "js/components/manual-donation/index.js",
       "js/components/donation-form/index.js",
-      "js/components/grid/index.js"
+      "js/components/grid/index.js",
+      "js/components/thank-you/index.js"
     ],
     "css": [
-      "assets/app-qff74m5v.css"
+      "assets/app-gMmWYZGP.css"
     ]
   },
   "js/components/buttons/index.js": {
-    "file": "assets/index-Ce-nSoPU.js",
+    "file": "assets/index-JiV3H7oj.js",
     "name": "index",
     "src": "js/components/buttons/index.js",
     "isDynamicEntry": true,
@@ -77,7 +87,7 @@
     ]
   },
   "js/components/company-highlight/index.js": {
-    "file": "assets/index-DUYrGKvg.js",
+    "file": "assets/index-PhSGh3-f.js",
     "name": "index",
     "src": "js/components/company-highlight/index.js",
     "isDynamicEntry": true,
@@ -86,13 +96,13 @@
     ]
   },
   "js/components/contact/index.js": {
-    "file": "assets/index-DM1L9kaq.js",
+    "file": "assets/index-BGLYC8Nd.js",
     "name": "index",
     "src": "js/components/contact/index.js",
     "isDynamicEntry": true
   },
   "js/components/container/index.js": {
-    "file": "assets/index-PtLcG1nx.js",
+    "file": "assets/index-C4TgJmOd.js",
     "name": "index",
     "src": "js/components/container/index.js",
     "isDynamicEntry": true,
@@ -101,7 +111,7 @@
     ]
   },
   "js/components/donation-form/index.js": {
-    "file": "assets/index-Bkk26h22.js",
+    "file": "assets/index-3drPvMbE.js",
     "name": "index",
     "src": "js/components/donation-form/index.js",
     "isDynamicEntry": true,
@@ -133,7 +143,7 @@
     ]
   },
   "js/components/grid/index.js": {
-    "file": "assets/index-Cau2T3DP.js",
+    "file": "assets/index-BiDDi21M.js",
     "name": "index",
     "src": "js/components/grid/index.js",
     "isDynamicEntry": true,
@@ -169,19 +179,32 @@
     "src": "js/components/manual-donation/index.js",
     "isDynamicEntry": true
   },
+  "js/components/more-stack-slider/index.js": {
+    "file": "assets/index-j2sryzRS.js",
+    "name": "index",
+    "src": "js/components/more-stack-slider/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_swiper-core-BWsPD-mm.js",
+      "_effect-fade-CIf3dgef.js",
+      "_effect-cards-CA-oWCBK.js",
+      "_create-shadow-CviIH7Wl.js"
+    ]
+  },
   "js/components/navigation-stack-slider/index.js": {
-    "file": "assets/index-BBtmkj5U.js",
+    "file": "assets/index-9tAZor75.js",
     "name": "index",
     "src": "js/components/navigation-stack-slider/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_swiper-core-BWsPD-mm.js",
-      "_create-shadow-CviIH7Wl.js",
-      "_effect-cards-CA-oWCBK.js"
+      "_effect-fade-CIf3dgef.js",
+      "_effect-cards-CA-oWCBK.js",
+      "_create-shadow-CviIH7Wl.js"
     ]
   },
   "js/components/spacer/index.js": {
-    "file": "assets/index-DRRafLtf.js",
+    "file": "assets/index-BvJDhar-.js",
     "name": "index",
     "src": "js/components/spacer/index.js",
     "isDynamicEntry": true,
@@ -201,7 +224,7 @@
     ]
   },
   "js/components/tab-content/index.js": {
-    "file": "assets/index-Bi0rP-tn.js",
+    "file": "assets/index-BVNk625n.js",
     "name": "index",
     "src": "js/components/tab-content/index.js",
     "isDynamicEntry": true,
@@ -210,13 +233,19 @@
       "_choices-PN3yYAsG.js"
     ]
   },
+  "js/components/thank-you/index.js": {
+    "file": "assets/index-CQCfIuWP.js",
+    "name": "index",
+    "src": "js/components/thank-you/index.js",
+    "isDynamicEntry": true
+  },
   "js/editor.js": {
-    "file": "assets/editor-M1SlyAJu.js",
+    "file": "assets/editor-BcZrYEo3.js",
     "name": "editor",
     "src": "js/editor.js",
     "isEntry": true,
     "css": [
-      "assets/editor-CEW26yfC.css"
+      "assets/editor-ejuBr5v4.css"
     ]
   }
 }

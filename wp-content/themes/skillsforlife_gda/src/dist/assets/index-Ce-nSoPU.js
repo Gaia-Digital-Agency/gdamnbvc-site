@@ -1,1 +1,0 @@
-import{B as s}from"./app-CGPgJ7qc.js";const r=i=>{const e=()=>{const t=i.querySelectorAll(".button-item");t.forEach(n=>{if(window.innerWidth>s.TABLET){const o=`${100/t.length}% - 0.875rem`;n.style.flex=`0 0 calc(${o})`}else n.style.flex="0 0 100%"})};window.addEventListener("resize",e),e()};export{r as initButtons};
