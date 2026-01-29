@@ -154,5 +154,15 @@ const initMobileMenu = () => {
 
 }
 
+const footerTargetCols = () => {
+    const main = () => {
+        const targetCol = document.querySelector('footer .target-menu-col')
+        const targetMenu = document.querySelector('footer .target-menu')
+        targetCol.style.width = `${targetMenu.getBoundingClientRect().width}px`
+    }
+    window.addEventListener('resize', main)
+    main()
+}
 
-export { determineNavHeight, initHeaderNav, initMobileMenu, enableScroll, disableScroll }
+
+export { determineNavHeight, initHeaderNav, initMobileMenu, enableScroll, disableScroll, footerTargetCols }
