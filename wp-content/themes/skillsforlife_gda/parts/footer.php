@@ -2,28 +2,28 @@
 <?php $limiter = ceil(count($menus) / 2); ?>
 
 <footer>
-    <div class="inner md:py-24 py-12 bg-theme-black">
+    <div class="inner md:py-[50px] py-[60px] bg-theme-black">
         <div class="container">
 
-            <div class="md:flex block md:justify-between justify-center mb-16 md:mb-0">
+            <div class="md:flex block md:justify-between justify-center mb-16 md:mb-[90px]">
 
                 <div class="logo-wrapper mb-16 md:mb-0">
                     <a href="/">
                         <?php if(get_theme_mod('footer_image')) : ?>
-                            <img src="<?= get_theme_mod('footer_image') ?>" width="200" alt="">
+                            <img src="<?= get_theme_mod('footer_image') ?>" width="235" alt="">
                         <?php else : ?>
                             <h1>Skills for Life</h1>
                         <?php endif; ?>
                     </a>
                 </div>
 
-                <div class="menu-wrapper block md:flex gap-x-12">
+                <div class="menu-wrapper block md:flex gap-x-12 target-menu">
                     <div class="menu-col">
                         <?php $counter = 0; ?>
                         <?php foreach($menus as $i => $menu) : ?>
                             <?php if($counter < $limiter) : ?>
                         <div class="menu-item md:mb-1 mb-6">
-                            <a href="<?= $menu['url'] ?>" class="text-white font-extend text-menu-footer font-medium md:font-light"><?= $menu['title'] ?></a>
+                            <a href="<?= $menu['url'] ?>" class="text-white font-extend text-menu-footer font-medium"><?= $menu['title'] ?></a>
                         </div>
                         <?php endif; ?>
                         <?php $counter = $counter + 1; ?>
@@ -34,7 +34,7 @@
                         <?php foreach($menus as $i => $menu) : ?>
                             <?php if($counter >= $limiter) : ?>
                         <div class="menu-item md:mb-1 mb-6">
-                            <a href="<?= $menu['url'] ?>" class="text-white font-extend text-menu-footer font-medium md:font-light"><?= $menu['title'] ?></a>
+                            <a href="<?= $menu['url'] ?>" class="text-white font-extend text-menu-footer font-medium"><?= $menu['title'] ?></a>
                         </div>
                         <?php endif; ?>
                         <?php $counter = $counter + 1; ?>
@@ -46,37 +46,41 @@
             </div>
 
 
-            <div class="flex md:gap-x-48 gap-y-8 md:gap-y-0 flex-col md:flex-row md:items-center">
+            <div class="flex md:justify-between gap-y-8 md:gap-y-0 flex-col md:flex-row md:items-center">
                 <div class="socials-wrapper flex md:gap-x-[30px] gap-x-[20px] order-1 md:order-1">
                     <div class="socials-item">
                         <a href="#">
-                            <img src="<?= assets_url('images/Instagram.svg') ?>" alt="" class="w-[40px] h-[40px] md:w-[50px] md:h-[50px]">
+                            <img src="<?= assets_url('images/Instagram.svg') ?>" alt="" class="w-[40px] h-[40px] md:w-[30px] md:h-[30px]">
                         </a>
                     </div>
                     <div class="socials-item">
                         <a href="#">
-                            <img src="<?= assets_url('images/TikTok.svg') ?>" alt="" class="w-[40px] h-[40px] md:w-[50px] md:h-[50px]">
+                            <img src="<?= assets_url('images/TikTok.svg') ?>" alt="" class="w-[40px] h-[40px] md:w-[30px] md:h-[30px]">
                         </a>
                     </div>
                     <div class="socials-item">
                         <a href="#">
-                            <img src="<?= assets_url('images/Facebook.svg') ?>" alt="" class="w-[40px] h-[40px] md:w-[50px] md:h-[50px]">
+                            <img src="<?= assets_url('images/Facebook.svg') ?>" alt="" class="w-[40px] h-[40px] md:w-[30px] md:h-[30px]">
                         </a>
                     </div>
                     <div class="socials-item">
                         <a href="#">
-                            <img src="<?= assets_url('images/Pinterest.svg') ?>" alt="" class="w-[40px] h-[40px] md:w-[50px] md:h-[50px]">
+                            <img src="<?= assets_url('images/Pinterest.svg') ?>" alt="" class="w-[40px] h-[40px] md:w-[30px] md:h-[30px]">
                         </a>
                     </div>
                 </div>
                 
                 <div class="extra-links flex gap-x-8 order-2 md:order-2">
                     <div class="link-item menu-item text-center mb-2 md:mb-0">
-                        <a href="#" class="text-theme-grey-2 md:text-theme-grey text-caption-small md:text-caption md:font-light font-bold opacity-50 md:opacity-100 font-extend">Privacy Policy</a>
+                        <a href="#" class="text-theme-grey-2 md:text-theme-grey text-caption-small md:text-caption md:font-bold font-bold opacity-50 font-extend">Privacy Policy</a>
                     </div>
                     <div class="link-item menu-item text-center mb-2 md:mb-0">
-                        <a href="#" class="text-theme-grey-2 md:text-theme-grey text-caption-small md:text-caption md:font-light font-bold opacity-50 md:opacity-100 font-extend">Terms & Conditions</a>
+                        <a href="#" class="text-theme-grey-2 md:text-theme-grey text-caption-small md:text-caption md:font-bold font-bold opacity-50 font-extend">Terms & Conditions</a>
                     </div>
+                </div>
+
+                <div class="spacer order-3 target-menu-col hidden md:block">
+
                 </div>
 
             </div>
@@ -85,7 +89,7 @@
 </footer>
 
 
-<div id="donation-overlay" class="fixed inset-0 bg-[rgba(0,0,0,.4)] z-[999999]"></div>
+<div id="donation-overlay" class="fixed inset-0 bg-[rgba(0,0,0,.4)] z-[999999]" style="opacity: 0;"></div>
 <div id="donation-form" class="fixed left-0 top-0 bottom-0 right-0 md:right-auto z-[999999]" role="dialog" aria-modal="true" hidden>
     <div class="md:p-[50px] pt-[100px] pb-[80px] container-mobile outer-wrapper wrapper bg-white max-w-3xl h-full relative overflow-y-scroll">
         <div class="close-icon absolute top-5 right-5 md:hidden">
