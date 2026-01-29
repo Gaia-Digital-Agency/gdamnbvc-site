@@ -103,6 +103,11 @@ function check_active_menu( $menu_item ) {
     if ( $actual_link == $menu_item->url ) {
         return true;
     }
+    $page = get_page_by_path(str_replace(home_url(), '', $actual_link));
+    $menu_page = get_page_by_path(str_replace(home_url(), '', $menu_item->url));
+    if($page->post_parent == $menu_page->ID) {
+        return true;
+    }
     return false;
 }
 
