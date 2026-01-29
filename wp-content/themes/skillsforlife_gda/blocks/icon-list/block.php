@@ -48,7 +48,7 @@ $icons = get_field('icons');
                         <?php if($icon['text']['url'] && $icon['text']['url'] != '#') : ?>
                             <a href="<?= $icon['text']['url'] ? $icon['text']['url'] : '' ?>" target="<?= $icon['text']['target'] ? $icon['text']['target'] : '_self' ?>">
                         <?php endif; ?>
-                            <span class="text-caption">
+                            <span class="text-caption block">
                             <?= $icon['text']['title'] ? $icon['text']['title'] : '' ?>
                             </span>
                         <?php if($icon['text']['url'] && $icon['text']['url'] != '#') : ?>
