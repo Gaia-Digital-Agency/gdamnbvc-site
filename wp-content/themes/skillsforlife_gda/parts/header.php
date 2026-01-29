@@ -41,12 +41,14 @@
 
             <div class="wrapper">
                 <div class="close-button cursor-pointer py-5">
-                        <img src="<?= assets_url('images/close.svg') ?>" class="ml-auto" alt="">
+                    <div class="inner w-[40px] h-[40px] flex items-center justify-center ml-auto">
+                        <img src="<?= assets_url('images/close.svg') ?>" class="w-[20px] h-[20px]" alt="">
                     </div>
+                </div>
                 <div class="inner pb-8 mb-[25px] flex items-center justify-between">
                     <div class="logo-wrapper cursor-pointer">
                         <a href="/">
-                            <img src="<?= wp_get_attachment_image_src( get_theme_mod('custom_logo') , 'full' )[0] ?>" width="100" alt="">
+                            <img src="<?= wp_get_attachment_image_src( get_theme_mod('custom_logo') , 'full' )[0] ?>" width="150" alt="">
                         </a>
                     </div>
                 </div>
