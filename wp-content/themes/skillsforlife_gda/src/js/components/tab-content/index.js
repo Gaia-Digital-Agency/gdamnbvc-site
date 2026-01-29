@@ -11,21 +11,11 @@ const initTabContent = (component) => {
         allowTouchMove: false,
         modules: [HashNavigation],
         hashNavigation: true,
-        // modules: [EffectFade],
-        // effect: "fade",
-        // fadeEffect: {
-        //     crossFade: true
-        // }
         init: false,
         spaceBetween: 20,
         autoHeight: true,
         observer: true,
-        // observeParents: true,
         observeSlideChildren: true
-        // init: (_swiper) => {
-        //     if(!filter) return
-        //     _swiper.activeIndex
-        // }
     })
 
     const buttons = component.querySelectorAll('.tabs-button-wrapper .tabs-button')
@@ -102,14 +92,26 @@ const initTabContent = (component) => {
         // choice.refresh()
         filter.querySelector('select').addEventListener('change', (e) => {
             if(e.target.value == 'picture') {
+                component.classList.add('filter-selected')
+                component.classList.add('image-filter')
+                component.classList.remove('video-filter')
+                
                 swiper.el.querySelectorAll('.image-gallery').forEach(ele => {ele.classList.remove('hidden')})
                 swiper.el.querySelectorAll('.video-gallery').forEach(ele => {ele.classList.add('hidden')})
             }
             if(e.target.value == 'video') {
+                component.classList.add('filter-selected')
+                component.classList.add('video-filter')
+                component.classList.remove('image-filter')
+
                 swiper.el.querySelectorAll('.video-gallery').forEach(ele => {ele.classList.remove('hidden')})
                 swiper.el.querySelectorAll('.image-gallery').forEach(ele => {ele.classList.add('hidden')})
             }
             if(e.target.value == 'all') {
+                component.classList.remove('filter-selected')
+                component.classList.remove('video-filter')
+                component.classList.remove('image-filter')
+
                 swiper.el.querySelectorAll('.video-gallery').forEach(ele => {ele.classList.remove('hidden')})
                 swiper.el.querySelectorAll('.image-gallery').forEach(ele => {ele.classList.remove('hidden')})
             }
