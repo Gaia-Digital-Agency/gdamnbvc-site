@@ -41,15 +41,17 @@ $button = get_field('button');
             ?>
             <div class="counter-wrapper container-mobile text-h3 md:mb-[50px] mb-[20px]">
                 <?php if($imageCounter) : ?>
-                    <span class="font-medium">
+                    <span class="font-medium picture-counter">
                     <?= $imageCounter ?> Picture<?= $imageCounter > 1 ? 's' : '' ?>
                     </span>
                 <?php endif; ?>
                 <?php if($imageCounter && $videoCounter) : ?>
-                    and
+                    <span class="and-counter">
+                        and
+                    </span>
                 <?php endif; ?>
                 <?php if($videoCounter) : ?>
-                    <span class="font-medium">
+                    <span class="font-medium video-counter">
                         <?= $videoCounter ?> Video<?= $videoCounter > 1 ? 's' : '' ?>
                     </span>
                 <?php endif; ?>
@@ -58,7 +60,7 @@ $button = get_field('button');
         <?php if($imageCounter) : ?>
             <div class="image-gallery">
                 <div class="title-wrapper container-mobile mb-[25px]">
-                    <p class="text-h3">Picture<?= $imageCounter > 1 ? 's' : '' ?></p>
+                    <p class="text-h3"><span class="image-filter-counter filter-counter"><?= $imageCounter ?> </span>Picture<?= $imageCounter > 1 ? 's' : '' ?></p>
                 </div>
                 <div class="grid grid-cols-12 gap-[50px] mb-[50px] <?= $imageCounter > 1 ? 'multi' : '' ?>">
                     <?php foreach($gallery as $i => $media) : ?>
@@ -81,7 +83,7 @@ $button = get_field('button');
         <?php if($videoCounter) : ?>
             <div class="video-gallery">
                 <div class="title-wrapper container-mobile mb-[25px]">
-                    <p class="text-h3">Video<?= $videoCounter > 1 ? 's' : '' ?></p>
+                    <p class="text-h3"><span class="video-filter-counter filter-counter"><?= $videoCounter ?> </span>Video<?= $videoCounter > 1 ? 's' : '' ?></p>
                 </div>
                 <div class="grid grid-cols-12 gap-[50px] mb-[50px] <?= $videoCounter > 1 ? 'multi' : '' ?>">
                     <?php foreach($gallery as $i => $media) : ?>
