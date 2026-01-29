@@ -43,4 +43,19 @@
         }
         @apply lg:w-[300px];
     }
+
+    .filter-counter {
+        display: none;
+    }
+    &.filter-selected {
+        .counter-wrapper {
+            display: none;
+        }
+        .filter-counter {
+            display: inline;
+        }
+        .title-wrapper p {
+            font-weight: 500;
+        }
+    }
 }
